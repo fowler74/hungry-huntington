@@ -266,25 +266,24 @@
 								}
 
 								//NEED HELP HERE!! (make it better :P )
+								$('nav li').click(function(){
+									event.preventDefault();
+								});
 								$('.daily-li').click(function(){
 									$('.daily').removeClass('none').addClass('block');
 									$('.weekly').addClass('none');
 									$('.bar').addClass('none');
-									event.preventDefault();
 								});
 								$('.weekly-li').click(function(){
 									$('.weekly').removeClass('none').addClass('block');
 									$('.daily').addClass('none');
 									$('.bar').addClass('none');
-									event.preventDefault();
 								});
 								$('.bar-li').click(function(){
 									$('.bar').removeClass('none').addClass('block');
 									$('.weekly').addClass('none');
 									$('.daily').addClass('none');
-									event.preventDefault();
 								});
-								/* random */
 								$('.random-li').click(function(){
 									maxDeals = $('.deal').length;
 									random = Math.floor((Math.random() * maxDeals) + 1);
@@ -293,7 +292,6 @@
 									$('.deal:nth-of-type(' + random + ')').addClass('block');
 									$('.deal:nth-of-type(' + random + ')').removeClass('none');
 									console.log(random);
-									event.preventDefault();
 								});
 							});
 						</script>
