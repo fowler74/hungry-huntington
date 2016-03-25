@@ -1,4 +1,8 @@
 {% include 'head.twig' %}
 {% include 'header.twig' %}
 <p>Hello</p>
+<h2>Deals</h2>
+{% for deal in deals.getDeals() %}
+{{ deal.name }}
+{% endfor %}
 {% include 'footer.twig' %}
