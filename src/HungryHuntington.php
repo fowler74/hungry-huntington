@@ -26,8 +26,20 @@ class HungryHuntington {
     }
 
     /**
+     * Get all the deals in Huntington
+     * @return Array an associative array with all the deals
+     */
+    public function getDeals() {
+        # Waiting on the data
+        $query = 'SELECT name FROM deals LIMIT 1000';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    /**
      * Load the config file
-     * 
+     *
      * @return array configuration options for Hungry Huntington
      */
     public static function loadConfig() {
