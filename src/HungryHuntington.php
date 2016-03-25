@@ -37,7 +37,7 @@ class HungryHuntington {
         LIMIT 1000';
         $stmt = $this->db->prepare($query);
         $stmt->execute();
-        $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     /**
