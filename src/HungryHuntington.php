@@ -12,7 +12,7 @@ class HungryHuntington {
     protected $db;
 
     public function __construct() {
-        $d = self::loadConfig('db');
+        $d = self::loadConfig();
         try {
             $this->db = new \PDO("mysql:host=" . $d['hostname'] . ";dbname="
                     . $d['database'] . ";charset=utf8",
@@ -31,7 +31,10 @@ class HungryHuntington {
      */
     public function getDeals() {
         # Waiting on the data
-        $query = 'SELECT name FROM deals LIMIT 1000';
+        $query = 'SELECT id, name, headline, description,
+        google_map, website, phone, address, `type`
+        FROM deals
+        LIMIT 1000';
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $stmt->fetchAll(\PDO::FETCH_ASSOC);
