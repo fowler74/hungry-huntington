@@ -14,7 +14,7 @@ class Controller extends HungryHuntington {
     public function run() {
             // if posted action is in the actions property call the action
             if(in_array($this->post['action'], $this->actions)) {
-                $this->$this->post['action']();
+                $this->{$this->post['action']}();
             }
     }
 
