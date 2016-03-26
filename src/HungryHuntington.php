@@ -7,8 +7,10 @@
  * Get all of the deals from the database and store them in a public property.
  *
  * @author Levi <levi@wappr.co>
+ * @version 1.0.0
  */
 class HungryHuntington {
+    public $version = '1.0.0';
     protected $db;
 
     public function __construct() {
