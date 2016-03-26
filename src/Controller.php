@@ -39,7 +39,8 @@ class Controller extends HungryHuntington {
     protected function login() {
         $query = 'SELECT user_id, username, password
         FROM users
-        WHERE username = :username';
+        WHERE username = :username
+        LIMIT 1';
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':username', $_POST['username'], \PDO::PARAM_STR);
         $stmt->execute();
