@@ -1,0 +1,31 @@
+<hgroup>
+    <h2>Add Deal</h2>
+</hgroup>
+<form action="" method="POST">
+  <div class="group">
+    <select name="company">
+        {% for company in deals.getCompanies() %}
+        <option value="{{ company.company_id }}">{{ company.company_name }}</option>
+        {% endfor %}
+    </select>
+    <label>Company</label>
+  </div>
+  <div class="group">
+    <select name="type">
+        {% for type in deals.getTypes() %}
+        <option value="{{ type.type_id }}">{{ type.type_of_deal }}</option>
+        {% endfor %}
+    </select>
+    <label>Type</label>
+  </div>
+  <div class="group">
+    <input type="password" name="password"><span class="highlight"></span><span class="bar"></span>
+    <label>Password</label>
+  </div>
+  <button type="submit" class="button buttonBlue">Add user
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+  <input type="hidden" name="action" value="add">
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/assets/js/admin.js"></script>

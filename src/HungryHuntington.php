@@ -53,6 +53,15 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getTypes() {
+        $query = 'SELECT type_id, type_of_deal
+        FROM types_of_deals
+        LIMIT 50';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     protected function getDb() {
         return $this->db;
     }
