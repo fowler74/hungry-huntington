@@ -9,7 +9,7 @@
     <h1>Admin Hungry Huntington</h1>
     <h3>Turn away, scoundrels!</h3>
 </hgroup>
-<form>
+<form action="" method="POST">
   <div class="group">
     <input type="text" name="username"><span class="highlight"></span><span class="bar"></span>
     <label>Username</label>
@@ -21,6 +21,7 @@
   <button type="button" class="button buttonBlue">Login
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
   </button>
+  <input type="hidden" name="action" value="login">
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="/assets/js/admin.js"></script>
