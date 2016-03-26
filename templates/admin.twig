@@ -1,16 +1,24 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>Admin | Hungry Huntington</title>
-
-  <!--[if lt IE 9]>
-  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin</title>
+    </head>
+    <link rel="stylesheet" href="/admin.css" type="text/css">
 <body>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<form>
+  <div class="group">
+    <input type="text" name="username"><span class="highlight"></span><span class="bar"></span>
+    <label>Username</label>
+  </div>
+  <div class="group">
+    <input type="password"><span class="highlight"></span><span class="bar"></span>
+    <label>Password</label>
+  </div>
+  <button type="button" class="button buttonBlue">Login
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/admin.js"></script>
 </body>
 </html>
