@@ -1,8 +1,50 @@
 {% include 'head.twig' %}
 {% include 'header.twig' %}
-<p>Hello</p>
-<h2>Deals</h2>
-{% for deal in deals.getDeals() %}
-{{ deal.name }}
-{% endfor %}
+<section>
+    <div class="wrap">
+        <!--div class="deal daily">
+            <div class="googleMap">
+                <img src="http://maps.google.com/maps/api/staticmap?center=38.419250,-82.445154&zoom=13&markers=38.419250,-82.445154|38.419250,-82.445154&size=300x300&sensor=TRUE_OR_FALSE" alt="">
+            </div>
+            <div class="info">
+                <h2>Buy One Get One Free</h2>
+                <p>type:daily</p>
+                <p>Every day from 5:30 - 9 you get a buy one get one free of equal value or less</p>
+            </div>
+            <button class="contactButton mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                  <div><i class="material-icons">add</i></div>
+            </button>
+            <div class="contact">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Subway</li>
+                    <li>website.com</li>
+                    <li>304-555-5555</li>
+                    <li>huntington, wv 25701</li>
+                </ul>
+            </div>
+        </div-->
+        {% for deal in deals.getDeals() %}
+        <div class="deal {{ deal.type }}">
+            <div class="googleMap">
+                <img src="{{ deal.google_map }}" alt="">
+            </div>
+            <div class="info">
+                <h2>{{ deal.headline }}</h2>
+                <p>Type: {{ deal.type }}</p>
+                <p>{{ deal.description }}</p>
+            </div>
+            <button class="contactButton mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                  <div><i class="material-icons">add</i></div>
+            </button>
+            <div class="contact">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><a href="{{ deal.website }}" target="_BLANK">{{ deal.name }}</a></li>
+                    <li>{{ deal.phone }}</li>
+                    <li>{{ deal.address }}</li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
 {% include 'footer.twig' %}
