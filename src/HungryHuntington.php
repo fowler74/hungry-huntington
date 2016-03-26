@@ -38,6 +38,7 @@ class HungryHuntington {
         ON c.company_id = d.company_id
         LEFT JOIN types_of_deals t
         ON t.type_id = d.type_id
+        WHERE d.deleted = 0
         LIMIT 1000';
         $stmt = $this->db->prepare($query);
         $stmt->execute();
