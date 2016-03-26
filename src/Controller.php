@@ -90,10 +90,12 @@ class Controller extends HungryHuntington {
     protected function delete() {
         if($this->loggedIn) {
             $query = 'UPDATE deals
-            SET deleted = 1
+            SET deleted = 1,
+            deleted_by = :deleted_by
             WHERE id = :id';
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':id', $this->post['deal_id'], \PDO::PARAM_INT);
+            $stmt->bindParam(':deleted_by', $this->userId, \PDO::PARAM_INT);
             return $stmt->execute();
         }
     }
