@@ -156,7 +156,7 @@ class Controller extends HungryHuntington {
         $stmt->bindParam(':username', $this->post['username'], \PDO::PARAM_STR);
         $stmt->execute();
         $data = $stmt->fetch(\PDO::FETCH_ASSOC);
-        if(count($data) > 0) {
+        if($stmt->rowCount() > 0) {
             return true;
         } else {
             return false;
