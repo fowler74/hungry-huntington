@@ -3,7 +3,7 @@
 </hgroup>
 <form action="" method="POST">
   <div class="group">
-    <select name="company">
+    <select name="company_id">
         {% for company in deals.getCompanies() %}
         <option value="{{ company.company_id }}">{{ company.name }}</option>
         {% endfor %}
@@ -19,7 +19,7 @@
     <label>Type</label>
   </div>
   <div class="group">
-    <input type="text" name="Headline"><span class="highlight"></span><span class="bar"></span>
+    <input type="text" name="headline"><span class="highlight"></span><span class="bar"></span>
     <label>Headline</label>
   </div>
   <div class="group">
