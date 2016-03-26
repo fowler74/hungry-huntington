@@ -34,6 +34,7 @@ class HungryHuntington {
         $query = 'SELECT id, name, headline, description,
         google_map, website, phone, address, `type`
         FROM deals
+        ORDER BY name ASC
         LIMIT 1000';
         $stmt = $this->db->prepare($query);
         $stmt->execute();
