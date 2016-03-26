@@ -15,6 +15,8 @@ class Controller extends HungryHuntington {
     }
 
     public function run() {
+        // See if user is already logged in
+        $this->checkLoggedIn();
         // Check and see if post['action'] isset
         if(!isset($this->post['action'])) {
             return null;
@@ -42,6 +44,7 @@ class Controller extends HungryHuntington {
         $data = $stmt->fetch(\PDO::FETCH_ASSOC);
         if(password_verify($this->post['password'], $data['password'])) {
             $this->loggedIn = true;
+            $_SESSION['loggedIn'] = true;
             return true;
         } else {
             return false;
@@ -62,6 +65,13 @@ class Controller extends HungryHuntington {
 
     protected function delete() {
 
+    }
+
+    protected function checkLoggedIn() {
+        if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+            $this->loggedIn = true;
+            $_SESSION['loggedIn'] = true;
+        }
     }
 
     protected function loadActions() {
