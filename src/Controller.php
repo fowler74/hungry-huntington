@@ -10,6 +10,8 @@ class Controller extends HungryHuntington {
     public function __construct(Array $post) {
         $this->post = $post;
         $this->loadActions();
+        parent::__construct();
+        $this->db = parent::getDb();
     }
 
     public function run() {

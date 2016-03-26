@@ -44,6 +44,10 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    protected function getDb() {
+        return $this->db;
+    }
+
     /**
      * Load the config file
      *
