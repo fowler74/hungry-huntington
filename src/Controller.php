@@ -47,6 +47,7 @@ class Controller extends HungryHuntington {
             $this->loggedIn = true;
             $_SESSION['loggedIn'] = true;
             $_SESSION['username'] = $data['username'];
+            $this->username = $data['username'];
             return true;
         } else {
             return false;
