@@ -127,7 +127,7 @@
 							<li class="daily-li"><a href="">Daily Deals</a></li>
 							<li class="weekly-li"><a href="">Weekly Deals</a></li>
 							<li class="bar-li"><a href="">Bar Deals</a></li>
-							<li><a href="">Random</a></li>
+							<li class="random-li"><a href="">Random</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -246,8 +246,6 @@
 					</div>
 					<footer>
 						<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-						<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-
 						<script>
 							$(document).ready(function(){
 								$('.contactButton').click(function(){
@@ -268,23 +266,32 @@
 								}
 
 								//NEED HELP HERE!! (make it better :P )
+								$('nav li').click(function(){
+									event.preventDefault();
+								});
 								$('.daily-li').click(function(){
 									$('.daily').removeClass('none').addClass('block');
 									$('.weekly').addClass('none');
 									$('.bar').addClass('none');
-									event.preventDefault();
 								});
 								$('.weekly-li').click(function(){
 									$('.weekly').removeClass('none').addClass('block');
 									$('.daily').addClass('none');
 									$('.bar').addClass('none');
-									event.preventDefault();
 								});
 								$('.bar-li').click(function(){
 									$('.bar').removeClass('none').addClass('block');
 									$('.weekly').addClass('none');
 									$('.daily').addClass('none');
-									event.preventDefault();
+								});
+								$('.random-li').click(function(){
+									maxDeals = $('.deal').length;
+									random = Math.floor((Math.random() * maxDeals) + 1);
+									$('.deal').addClass('none');
+									$('.deal').removeClass('block');
+									$('.deal:nth-of-type(' + random + ')').addClass('block');
+									$('.deal:nth-of-type(' + random + ')').removeClass('none');
+									console.log(random);
 								});
 							});
 						</script>
