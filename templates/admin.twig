@@ -9,7 +9,13 @@
         <h1>Admin Hungry Huntington</h1>
     </hgroup>
     {% if controller.loggedIn == true %}
+    <hgroup>
         <h3>Hello, {{ controller.username }}</h3>
+        <form action="" method="POST">
+            <input type="hidden" name="action" value="logout">
+            <button type="submit">logout</button>
+        </form>
+    </hgroup>
         {% include 'inc/admin/adduser.twig' %}
     {% else %}
         {% include 'inc/admin/login.twig' %}
