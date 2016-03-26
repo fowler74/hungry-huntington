@@ -96,6 +96,9 @@ class Controller extends HungryHuntington {
         // I could check if logged in before calling these methods, but not all
         // of the methods will require a login.
         if($this->loggedIn) {
+            if($this->findUser()) {
+                return false;
+            }
             $password = password_hash($this->post['password'], PASSWORD_DEFAULT);
             $query = 'INSERT INTO users
             (username, password)
@@ -136,6 +139,19 @@ class Controller extends HungryHuntington {
             $this->username = $_SESSION['username'];
             $this->userId   = $_SESSION['userId'];
             $_SESSION['loggedIn'] = true;
+        }
+    }
+
+    protected function findUser() {
+        $query = 'SELECT username FROM users WHERE username = :username LIMIT 1';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':username', $this->post['username'], \PDO::PARAM_STR);
+        $stmt->execute();
+        $data = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if(count($data) > 0) {
+            return true;
+        } else {
+            return false;
         }
     }
 
