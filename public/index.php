@@ -23,5 +23,11 @@ $controller->run();
 
 $loader = new Twig_Loader_Filesystem(ROOT . DS . 'templates');
 $twig = new Twig_Environment($loader);
-$template = $twig->loadTemplate($page . '.twig');
+if(file_exists(ROOT . DS . 'templates' . DS . $page '.twig')) {
+    $template = $twig->loadTemplate($page . '.twig');
+} else {
+    header("HTTP/1.0 404 Not Found");
+    echo 'Page not found';
+    die();
+}
 echo $template->render(array('deals' => $hungry, 'controller' => $controller));
