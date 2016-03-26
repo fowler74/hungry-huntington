@@ -44,6 +44,15 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getCompanies() {
+        $query = 'SELECT company_id, company_name
+        FROM companies
+        LIMIT 100';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     protected function getDb() {
         return $this->db;
     }
