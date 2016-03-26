@@ -5,6 +5,9 @@
     </head>
     <link rel="stylesheet" href="/assets/css/admin.css" type="text/css">
 <body>
+    <hgroup>
+        <h1>Admin Hungry Huntington</h1>
+    </hgroup>
     {% if controller.loggedIn == true %}
         <h3>Hello, {% controller.username %}</h3>
         {% include 'inc/admin/adduser.twig' %}
