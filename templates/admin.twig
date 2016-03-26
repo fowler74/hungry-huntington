@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/assets/css/admin.css" type="text/css">
 <body>
     {% if controller.loggedIn == true %}
-        <h3>Logged in</h3>
+        <h3>Hello, {% controller.username %}</h3>
         {% include 'inc/admin/adduser.twig' %}
     {% else %}
         {% include 'inc/admin/login.twig' %}

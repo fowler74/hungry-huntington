@@ -2,6 +2,7 @@
 
 class Controller extends HungryHuntington {
     public $loggedIn;
+    public $username;
 
     protected $db;
     protected $actions;
@@ -45,6 +46,7 @@ class Controller extends HungryHuntington {
         if(password_verify($this->post['password'], $data['password'])) {
             $this->loggedIn = true;
             $_SESSION['loggedIn'] = true;
+            $_SESSION['username'] = $data['username'];
             return true;
         } else {
             return false;
@@ -100,6 +102,7 @@ class Controller extends HungryHuntington {
     protected function checkLoggedIn() {
         if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
             $this->loggedIn = true;
+            $this->username = $_SESSION['username'];
             $_SESSION['loggedIn'] = true;
         }
     }
