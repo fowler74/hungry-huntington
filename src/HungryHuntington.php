@@ -31,10 +31,13 @@ class HungryHuntington {
      */
     public function getDeals() {
         # Waiting on the data
-        $query = 'SELECT id, name, headline, description,
-        google_map, website, phone, address, `type`
-        FROM deals
-        ORDER BY name ASC
+        $query = 'SELECT id, c.name, headline, description,
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal
+        FROM deals d
+        LEFT JOIN companies c
+        ON c.company_id = d.company_id
+        LEFT JOIN types_of_deals t
+        ON t.type_id = d.type_id
         LIMIT 1000';
         $stmt = $this->db->prepare($query);
         $stmt->execute();

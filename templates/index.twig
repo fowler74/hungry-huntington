@@ -3,13 +3,13 @@
 <section>
     <div class="wrap">
         {% for deal in deals.getDeals() %}
-        <div class="deal {{ deal.type }}">
+        <div class="deal {{ deal.type_of_deal }}">
             <div class="googleMap">
                 <img src="{{ deal.google_map }}" alt="{{ deal.name }}">
             </div>
             <div class="info">
                 <h2>{{ deal.name }} | {{ deal.headline }}</h2>
-                <p>Type: {{ deal.type|capitalize }}</p>
+                <p>Type: {{ deal.type_of_deal|capitalize }}</p>
                 <p>{{ deal.description }}</p>
             </div>
             <button class="contactButton mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
