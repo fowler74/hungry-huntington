@@ -66,7 +66,17 @@ class Controller extends HungryHuntington {
 
     protected function add() {
         if($this->loggedIn) {
-
+            $query = 'INSERT INTO deals
+            (company_id, headline, description, type_id, added_by)
+            VALUES
+            (:company_id, :headline, :description, :type_id, :added_by)';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':company_id', $this->post['company_id'], \PDO::PARAM_INT);
+            $stmt->bindParam(':headline', $this->post['headline'], \PDO::PARAM_STR);
+            $stmt->bindParam(':description', $this->post['description'], \PDO::PARAM_STR);
+            $stmt->bindParam(':type_id', $this->post['type'], \PDO::PARAM_INT);
+            $stmt->bindParam(':added_by', $this->userId, \PDO::PARAM_INT);
+            return $stmt->execute();
         }
     }
 
