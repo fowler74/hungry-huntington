@@ -6,4 +6,6 @@ $actions = [
         'add',
         'update',
         'delete',
+        'adduser',
+        'deluser',
 ];

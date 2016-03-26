@@ -52,19 +52,49 @@ class Controller extends HungryHuntington {
     }
 
     protected function logout() {
+        if($this->loggedIn) {
 
+        }
     }
 
     protected function add() {
+        if($this->loggedIn) {
 
+        }
     }
 
     protected function update() {
+        if($this->loggedIn) {
 
+        }
     }
 
     protected function delete() {
+        if($this->loggedIn) {
 
+        }
+    }
+
+    protected function adduser() {
+        // I could check if logged in before calling these methods, but not all
+        // of the methods will require a login.
+        if($this->loggedIn) {
+            $password = password_hash($this->post['password'], PASSWORD_DEFAULT);
+            $query = 'INSERT INTO users
+            (username, password)
+            VALUES
+            (:username, :password)';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':username', $this->post['username'], \PDO::PARAM_STR);
+            $stmt->bindParam(':password', $password, \PDO::PARAM_STR);
+            return $stmt->execute();
+        }
+    }
+
+    protected function deluser() {
+        if($this->loggedIn) {
+
+        }
     }
 
     protected function checkLoggedIn() {
