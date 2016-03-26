@@ -3,6 +3,7 @@
 class Controller extends HungryHuntington {
     public $loggedIn;
 
+    protected $db;
     protected $actions;
     protected $post;
 
@@ -30,7 +31,19 @@ class Controller extends HungryHuntington {
     *
     */
     protected function login() {
-
+        $query = 'SELECT username, password
+        FROM users
+        WHERE username = :username';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':username', $_POST['username'], \PDO::PARAM_STR);
+        $stmt->execute();
+        $data = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if(password_verify($this->post['password'], $data['password'])) {
+            $this->loggedIn = true;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     protected function logout() {
