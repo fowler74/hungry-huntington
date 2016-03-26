@@ -39,6 +39,7 @@ class HungryHuntington {
         LEFT JOIN types_of_deals t
         ON t.type_id = d.type_id
         WHERE d.deleted = 0
+        ORDER BY c.name ASC
         LIMIT 1000';
         $stmt = $this->db->prepare($query);
         $stmt->execute();
