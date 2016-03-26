@@ -108,6 +108,22 @@ class Controller extends HungryHuntington {
         }
     }
 
+    protected function addcompany() {
+        if($this->loggedIn) {
+            $query = 'INSERT INTO companies
+            (name, google_map, website, phone, address)
+            VALUES
+            (:name, :google_map, :website, :phone, :address)';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':name', $this->post['name'], \PDO::PARAM_STR);
+            $stmt->bindParam(':google_map', $this->post['google_map'], \PDO::PARAM_STR);
+            $stmt->bindParam(':website', $this->post['website'], \PDO::PARAM_STR);
+            $stmt->bindParam(':phone', $this->post['phone'], \PDO::PARAM_STR);
+            $stmt->bindParam(':address', $this->post['address'], \PDO::PARAM_STR);
+            return $stmt->execute();
+        }
+    }
+
     protected function deluser() {
         if($this->loggedIn) {
 

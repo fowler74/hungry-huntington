@@ -8,4 +8,5 @@ $actions = [
         'delete',
         'adduser',
         'deluser',
+        'addcompany',
 ];
