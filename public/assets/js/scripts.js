@@ -8,13 +8,13 @@ $(document).ready(function(){
     var imageLogo = ""; //image url
     var logoAlt = "Hungry Huntington"; //logo alt tag
     var link = ""; //add url link
-    var textLogo = "<a href="  + link +  "><span>" + logoAlt + "</span></a>";
+    /*var textLogo = "<a href="  + link +  "><span>" + logoAlt + "</span></a>";
     if (imageLogo){
         $('.logo').prepend('<a href='+ link +'><img src='+ imageLogo +' alt='+ logoAlt +' /></a>');
     }
     else {
         $('.logo').prepend(textLogo);
-    }
+    }*/
 
     //NEED HELP HERE!! (make it better :P )
     $('nav li').click(function(){
