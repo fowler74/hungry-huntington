@@ -14,7 +14,7 @@ body {height:100%; font-family: 'Open Sans', sans-serif;}
 ::selection {}
 .wrap {width:960px; margin:auto;}
 .clear {clear:both;}
-.beforeFooter {padding-bottom:; clear:both;}
+.beforeFooter {padding-bottom:200px; clear:both;}
 a {text-decoration:none;}
 
 /* Float */
@@ -78,6 +78,8 @@ nav ul li {font-size:20px; float:left; line-height:56px; box-sizing:border-box;}
 nav ul li:hover {border-bottom:4px solid #fff;}
 nav ul li.here {}
 nav ul li a {color:#fff; padding:0 25px; display:block;}
+header .logo .material-icons {color:#fff; font-size:80px; float:left;}
+header .logo span {display:block; font-size:28px; color:#fff; float:left; width:150px; margin-top:15px; margin-left:20px;}
 
 /* Body */
 section {margin-top:150px;}
@@ -97,7 +99,13 @@ section {margin-top:150px;}
 .none {display:none;}
 
 /* Footer */
-footer{position:absolute; bottom:0;}
+footer {position:absolute; bottom:0; width:100%; min-width:960px; height:200px; background-color:#607D8B;}
+footer .col3 {width:33.33%; float:left; text-align:center; min-height:1px;}
+footer .copyright {width:100%; min-width:960px; height:50px; background-color:#31424A; position:absolute; bottom:0; text-align:center; line-height:50px; color:#fff; font-size:12px;}
+footer .logo {width:168px; margin:auto; margin-top:25px;}
+footer .logo span {font-size:20px; color:#31424A; display:block; text-align:left; float:left; width:98px; margin-top:32px; margin-left:10px;}
+footer .logo a {color:#31424A;}
+footer .logo .material-icons {color:#31424A; font-size:60px; margin-top:20px; float:left;}
 
 /* Mobile Styles */
 @media screen and (max-width:960px) {
