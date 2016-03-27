@@ -12,7 +12,7 @@
     {% if controller.loggedIn == true %}
     <hgroup>
         <h3>Hello, {{ controller.username|capitalize }}</h3>
-        <form action="" method="POST">
+        <form action="" method="POST" class="none">
             <input type="hidden" name="action" value="logout">
             <button type="submit">logout</button>
         </form>
