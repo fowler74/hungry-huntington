@@ -110,4 +110,17 @@ footer .logo .material-icons {color:#31424A; font-size:60px; margin-top:20px; fl
 /* Mobile Styles */
 @media screen and (max-width:960px) {
     img {max-width:100%;}
+    header, footer, footer .copyright {min-width:100%;}
+	header nav ul {display:none;}
+	.googleMap, .mdl-button--fab.mdl-button--colored {display:none;}
+	.info {margin-left:0; margin:5%;}
+	footer .copyright {line-height:14px; box-sizing:border-box; padding-top:12px;}
+	footer .col3, .contact {width:100%;}
+	header .logo {width:165px; padding-top:40px; margin-left:5%;}
+	header .logo .material-icons {font-size:40px;}
+	header .logo span {width:120px; margin-top:6px; margin-left:5px; font-size:18px;}
+	h2 {line-height:40px;}
+	.deal {height:auto; margin:10px 0;}
+	.contact {position:relative; height:auto;}
+	section {margin-top:100px;}
 }
