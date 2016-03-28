@@ -16,5 +16,8 @@ class Router {
 				return $action;
 			}
 		}
+		// If nothing matches - return the homepage
+		$default = ['action' => 'index'];
+		return $default;
 	}
 }
