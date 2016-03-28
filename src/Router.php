@@ -3,10 +3,14 @@
 class Router {
 	private $routes;
 	private $request_uri;
+	private $segments;
+	private $numSegments;
 
 	public function __construct() {
 		// trim beginning and end /'s
 		$this->request_uri = trim($_SERVER['REQUEST_URI'], '/');
+		// Get how many segments there are
+		$this->numSegments = count(explode('/', $_SERVER['REQUEST_URI'])) - 1;
 	}
 
 	public function add($url, $action, $method = '', $hasChildren = false) {
