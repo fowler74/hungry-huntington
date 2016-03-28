@@ -2,8 +2,12 @@
 
 class Router {
 	private $routes;
+	private $request_uri;
 
-	public function __construct() {}
+	public function __construct() {
+		// trim beginning and end /'s
+		$this->request_uri = trim($_SERVER['REQUEST_URI'], '/');
+	}
 
 	public function add($url, $action, $method = '', $hasChildren = false) {
 		$this->routes[$url]['url']         = $url;
