@@ -5,9 +5,11 @@ class Router {
 
 	public function __construct() {}
 
-	public function add($url, $action) {
-		$this->routes[$url] = $action;
-	}
+		public function add($url, $action, $method = '', $hasChildren = false) {
+			$this->routes[$url]['action'] = $action;
+			$this->routes[$url]['method'] = $method;
+			$this->routes[$url]['hasChildren'] = $hasChildren;
+		}
 
 	public function dispatch() {
 		foreach($this->routes as $url => $action) {
