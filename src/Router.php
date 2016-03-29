@@ -24,8 +24,7 @@ class Router {
 
 	public function dispatch() {
 		foreach($this->routes as $route) {
-			if($route['url'] == $_SERVER['REQUEST_URI']
-				OR $route['url'] == rtrim($_SERVER['REQUEST_URI'], '/')) {
+			if($_SERVER['REQUEST_URI'], $route['url']) !== false) {
 				return $this->routes[$route['url']];
 			}
 		}
