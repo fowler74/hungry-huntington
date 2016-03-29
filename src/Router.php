@@ -10,7 +10,7 @@ class Router {
 		// trim beginning and end /'s
 		$this->request_uri = trim($_SERVER['REQUEST_URI'], '/');
 		// Get how many segments there are
-		$this->numSegments = count(explode('/', $_SERVER['REQUEST_URI'])) - 1;
+		$this->numSegments = count(explode('/', $this->request_uri)) - 1;
 		// Explode the segments into an array
 		$this->segments = explode('/', $this->request_uri);
 	}
