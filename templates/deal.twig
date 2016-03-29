@@ -1,0 +1,23 @@
+{% include 'inc/head.twig' %}
+{% include 'inc/header.twig' %}
+<section>
+    <div class="wrap">
+        {{ if deal.page['method'] == 'getCompanies'}}
+            {#
+            will include a get companies template. it will use the getCompanies
+            method in the HungryHuntington class.
+            #}
+        {{ elseif deal.page['method'] == 'getCompany' }}
+            {#
+            will include a get company template. it will need to use one of the
+            segment variables from the HungryHuntington page property to get the
+            deals for the specified company
+            #}
+        {{ elseif deal.page['method'] == 'getDeal' }}
+            {#
+            will include a get deal template. it will need to use one of the
+            segment variables from the HungryHuntington page property to get the
+            deals for the specified deal
+            #}
+        {{ endif }}
+{% include 'inc/footer.twig' %}
