@@ -27,7 +27,7 @@ class Router {
 			if($_SERVER['REQUEST_URI'], $route['url']) !== false) {
 				if($route['hasChildren']) {
 					$this->routes[$route['url']]['callMethod'] = $this->routes[$route['url']]['method'][$this->numSegments];
-					$this->routes[$route['url']]['urlTitle'] = $this->segments[$this->numSegments];
+					$this->routes[$route['url']]['urlTitle'] = $this->segments;
 				}
 				return $this->routes[$route['url']];
 			}
