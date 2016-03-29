@@ -17,6 +17,8 @@ $router->add('admin', 'admin');
 $router->add('deal', 'deal', ['getCompanies', 'getCompany', 'getDeal'], true);
 $router->add('weekly', 'weekly', ['getWeek', 'getDay'], true);
 $page = $router->dispatch();
+// Pass the page info to the HungryHuntington class
+$hungry->page = $page;
 $controller->run();
 
 $loader = new Twig_Loader_Filesystem(ROOT . DS . 'templates');
