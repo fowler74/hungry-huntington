@@ -12,7 +12,7 @@ require_once(ROOT . DS . 'vendor' . DS . 'autoload.php');
 $hungry     = new Wappr\HungryHuntington;
 $router     = new Wappr\Router;
 $controller = new Wappr\Controller($_POST);
-$router->add('', 'index');
+$router->add('*', 'index');
 $router->add('admin', 'admin');
 $router->add('deal', 'deal', ['getCompanies', 'getCompany', 'getDeal'], true);
 $router->add('weekly', 'weekly', ['getWeek', 'getDay'], true);
