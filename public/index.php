@@ -12,15 +12,19 @@ require_once(ROOT . DS . 'vendor' . DS . 'autoload.php');
 $hungry     = new Wappr\HungryHuntington;
 $router     = new Wappr\Router;
 $controller = new Wappr\Controller($_POST);
-$router->add('/', 'index');
-$router->add('/admin/', 'admin');
+$router->add('', 'index');
+$router->add('admin', 'admin');
+$router->add('deal', 'deal', ['getCompanies', 'getCompany', 'getDeal'], true);
+$router->add('weekly', 'weekly', ['getWeek', 'getDay'], true);
 $page = $router->dispatch();
+// Pass the page info to the HungryHuntington class
+$hungry->page = $page;
 $controller->run();
 
 $loader = new Twig_Loader_Filesystem(ROOT . DS . 'templates');
 $twig = new Twig_Environment($loader);
-if(file_exists(ROOT . DS . 'templates' . DS . $page . '.twig')) {
-    $template = $twig->loadTemplate($page . '.twig');
+if(file_exists(ROOT . DS . 'templates' . DS . $page['action'] . '.twig')) {
+    $template = $twig->loadTemplate($page['action'] . '.twig');
 } else {
     header("HTTP/1.0 404 Not Found");
     echo 'Page not found';

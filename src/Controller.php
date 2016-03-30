@@ -67,13 +67,15 @@ class Controller extends HungryHuntington {
 
     protected function add() {
         if($this->loggedIn) {
+            $url_title = $this->sluggit($this->post['headline']);
             $query = 'INSERT INTO deals
-            (company_id, headline, description, type_id, added_by)
+            (company_id, headline, url_title, description, type_id, added_by)
             VALUES
-            (:company_id, :headline, :description, :type_id, :added_by)';
+            (:company_id, :headline, :url_title, :description, :type_id, :added_by)';
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':company_id', $this->post['company_id'], \PDO::PARAM_INT);
             $stmt->bindParam(':headline', $this->post['headline'], \PDO::PARAM_STR);
+            $stmt->bindParam(':url_title', $url_title, \PDO::PARAM_STR);
             $stmt->bindParam(':description', $this->post['description'], \PDO::PARAM_STR);
             $stmt->bindParam(':type_id', $this->post['type'], \PDO::PARAM_INT);
             $stmt->bindParam(':added_by', $this->userId, \PDO::PARAM_INT);
@@ -121,12 +123,14 @@ class Controller extends HungryHuntington {
 
     protected function addcompany() {
         if($this->loggedIn) {
+            $url_title = $this->sluggit($this->post['name']);
             $query = 'INSERT INTO companies
-            (name, google_map, website, phone, address)
+            (name, url_title, google_map, website, phone, address)
             VALUES
-            (:name, :google_map, :website, :phone, :address)';
+            (:name, :url_title, :google_map, :website, :phone, :address)';
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':name', $this->post['name'], \PDO::PARAM_STR);
+            $stmt->bindParam(':url_title', $url_title, \PDO::PARAM_STR);
             $stmt->bindParam(':google_map', $this->post['google_map'], \PDO::PARAM_STR);
             $stmt->bindParam(':website', $this->post['website'], \PDO::PARAM_STR);
             $stmt->bindParam(':phone', $this->post['phone'], \PDO::PARAM_STR);
@@ -161,6 +165,19 @@ class Controller extends HungryHuntington {
         } else {
             return false;
         }
+    }
+
+    // Using this function I found on stackoverflow: http://stackoverflow.com/a/9535967
+    function slugit($string, $separator = '-')
+    {
+        $accents_regex = '~&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i';
+        $special_cases = array('&' => 'and', "'" => '');
+        $string = mb_strtolower(trim( $string ), 'UTF-8');
+        $string = str_replace(array_keys($special_cases), array_values($special_cases), $string);
+        $string = preg_replace($accents_regex, '$1', htmlentities($string, ENT_QUOTES, 'UTF-8'));
+        $string = preg_replace("/[^a-z0-9]/u", "$separator", $string);
+        $string = preg_replace("/[$separator]+/u", "$separator", $string);
+        return $string;
     }
 
     protected function loadActions() {
