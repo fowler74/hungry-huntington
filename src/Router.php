@@ -24,7 +24,7 @@ class Router {
 
 	public function dispatch() {
 		foreach($this->routes as $route) {
-			if($_SERVER['REQUEST_URI'], $route['url']) !== false) {
+			if(strpos($_SERVER['REQUEST_URI'], $route['url']) !== false) {
 				if($route['hasChildren']) {
 					$this->routes[$route['url']]['callMethod'] = $this->routes[$route['url']]['method'][$this->numSegments];
 					$this->routes[$route['url']]['urlTitle'] = $this->segments;
