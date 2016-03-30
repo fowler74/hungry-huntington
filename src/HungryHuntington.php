@@ -13,7 +13,7 @@ class HungryHuntington {
     public $version = '1.1.0';
     public $page;
     protected $db;
-    
+
     public function __construct() {
         $d = self::loadConfig();
         try {
@@ -65,6 +65,14 @@ class HungryHuntington {
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getPageData($key = '') {
+        if(isset($key)) {
+            return $this->page[$key];
+        } else {
+            return $this->page;
+        }
     }
 
     protected function getDb() {
