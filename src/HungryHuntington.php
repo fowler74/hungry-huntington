@@ -99,11 +99,15 @@ class HungryHuntington {
     }
 
     public function getCompanyDeals($companyUrl) {
-        $query = 'SELECT d.headline, d.url_title, d.description, c.name
+        $query = 'SELECT d.headline, d.url_title, d.description, c.name,
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal
         FROM deals d
         JOIN companies c
         ON c.company_id = d.company_id
-        WHERE c.url_title = :url_title';
+        LEFT JOIN types_of_deals t
+        ON t.type_id = d.type_id
+        WHERE d.deleted = 0
+        AND c.url_title = :url_title';
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':url_title', $companyUrl, \PDO::PARAM_STR);
         $stmt->execute();
