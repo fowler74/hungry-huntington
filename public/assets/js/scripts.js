@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     //NEED HELP HERE!! (make it better :P )
     $('nav li').click(function(){
-        event.preventDefault();
+        /*event.preventDefault();*/
     });
     $('.daily-li').click(function(){
         $('.daily').removeClass('none').addClass('block');
