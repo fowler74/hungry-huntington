@@ -15,17 +15,15 @@
 <section class="top">
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getCompanies' %}
-        <ul>
-        {% for deal in deals.getCompanies() %}
-            <li><a href="/restaurants/{{ deal.url_title }}/">{{ deal.name }}</a></li>
-        {% endfor %}
-        </ul>
+            <ul>
+            {% for deal in deals.getCompanies() %}
+                <li><a href="/restaurants/{{ deal.url_title }}/">{{ deal.name }}</a></li>
+            {% endfor %}
+            </ul>
         {% elseif deals.getPageData('callMethod') == 'getCompany' %}
-            {#
-            will include a get company template. it will need to use one of the
-            segment variables from the HungryHuntington page property to get the
-            deals for the specified company
-            #}
+            {% for deal in deals.getCompanyDeals(deals.getPageData('urlTitle')[1]) %}
+            {% include 'inc/deal-template.twig' %}
+            {% endfor %}
         {% elseif deals.getPageData('callMethod') == 'getDeal' %}
             {#
             will include a get deal template. it will need to use one of the
