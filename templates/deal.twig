@@ -17,7 +17,7 @@
         {% if deals.getPageData('callMethod') == 'getCompanies' %}
         <ul>
         {% for deal in deals.getCompanies() %}
-            <li><a href="/deal/{{ deal.url_title }}/"></a>{{ deal.name }}</li>
+            <li><a href="/deal/{{ deal.url_title }}/">{{ deal.name }}</a></li>
         {% endfor %}
         </ul>
         {% elseif deals.getPageData('callMethod') == 'getCompany' %}
