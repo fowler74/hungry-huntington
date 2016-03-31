@@ -3,7 +3,7 @@
 {% elseif deals.getPageData('callMethod') == 'getCompany' %}
     {% set title = deals.getCompanyName(deals.getPageData('urlTitle')[1]) %}
 {% elseif deals.getPageData('callMethod') == 'getDeal' %}
-    {% set title = deals.getDealName(deals.getPageData('urlTitle')[2])}
+    {% set title = deals.getDealName(deals.getPageData('urlTitle')[2]) %}
 {% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
