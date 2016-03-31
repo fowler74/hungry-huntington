@@ -70,6 +70,18 @@ class HungryHuntington {
         return $data['name'];
     }
 
+    public function getDealName($dealUrl) {
+        $query = 'SELECT headline
+        FROM deals
+        WHERE url_title = :url_title
+        LIMIT 1';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':url_title', $dealUrl, \PDO::PARAM_STR);
+        $stmt->execute();
+        $data = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $data['headline'];
+    }
+
     public function getCompanyDeals($companyUrl) {
         $query = 'SELECT d.headline, d.url_title, d.description, c.name
         FROM deals d
