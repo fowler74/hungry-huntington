@@ -118,12 +118,18 @@ class HungryHuntington {
 
     public function getDealsStartingToday() {
         $order = $this->orderStartToday();
-        $query = 'SELECT d.headline, dow.dow_name
+        $query = 'SELECT d.headline, d.url_title, d.description, c.name,
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal
             FROM deals d
+            JOIN companies c
+            ON c.company_id = d.company_id
+            LEFT JOIN types_of_deals t
+            ON t.type_id = d.type_id
             JOIN dow_deal b
             ON d.id = b.deals_id_fk
             JOIN days_of_week dow
             ON dow.dow_id = b.dow_id_fk
+            WHERE d.deleted = 0
             #WHERE dow.dow_id IN (0, 1, 2, 3, 4, 5, 6)
             ORDER BY FIELD(dow.dow_id, ' . $order . ')';
         $stmt = $this->db->prepare($query);
