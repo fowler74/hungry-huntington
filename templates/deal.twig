@@ -1,3 +1,8 @@
+{% if deals.getPageData('callMethod') == 'getCompanies' %}
+    {% set page = getCompanies() %}
+    {% set title = page.url %}
+    {{ title }}
+{% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
 <section>
