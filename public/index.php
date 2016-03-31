@@ -22,7 +22,8 @@ $hungry->page = $page;
 $controller->run();
 
 $loader = new Twig_Loader_Filesystem(ROOT . DS . 'templates');
-$twig = new Twig_Environment($loader);
+$twig = new Twig_Environment($loader, array('debug' => true));
+$twig->addExtension(new Twig_Extension_Debug());
 if(file_exists(ROOT . DS . 'templates' . DS . $page['action'] . '.twig')) {
     $template = $twig->loadTemplate($page['action'] . '.twig');
 } else {
