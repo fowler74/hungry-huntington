@@ -1,20 +1,24 @@
 $(document).ready(function(){
     $('.contactButton').click(function(){
-        //$(this).next().toggle("slide", {direction:"right"}, 400);
         $(this).children().toggleClass('rotate');
         $(this).next().toggleClass('open');
     });
 
-    var imageLogo = ""; //image url
-    var logoAlt = "Hungry Huntington"; //logo alt tag
-    var link = ""; //add url link
-    /*var textLogo = "<a href="  + link +  "><span>" + logoAlt + "</span></a>";
-    if (imageLogo){
-        $('.logo').prepend('<a href='+ link +'><img src='+ imageLogo +' alt='+ logoAlt +' /></a>');
-    }
-    else {
-        $('.logo').prepend(textLogo);
-    }*/
+    $('.sideNav').click(function(){
+        $('aside').addClass('slideIn');
+        $('.pageCover').addClass('block');
+        $('html').addClass('overflow');
+    });
+
+    $('.pageCover').click(function(){
+        $('aside').removeClass('slideIn');
+        $('.pageCover').removeClass('block');
+        $('html').removeClass('overflow');
+    });
+
+    $('.li-open').click(function(){
+        $(this).children().slideToggle();
+    });
 
     //NEED HELP HERE!! (make it better :P )
     $('nav li').click(function(){
