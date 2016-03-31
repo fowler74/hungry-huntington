@@ -12,10 +12,10 @@
 		<h1>{{ title }}</h1>
 	</div>
 </section>
-<section class="top" id="restaurants">
+<section class="top">
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getCompanies' %}
-            <ul>
+            <ul class="pageList">
             {% for deal in deals.getCompanies() %}
                 <li><a href="/restaurants/{{ deal.url_title }}/">{{ deal.name }}</a></li>
             {% endfor %}

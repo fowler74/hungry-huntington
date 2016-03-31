@@ -10,10 +10,10 @@
 		<h1>{{ title|capitalize }}</h1>
 	</div>
 </section>
-<section class="top" id="restaurants">
+<section class="top">
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getWeek'%}
-            <ul>
+            <ul class="pageList">
                 <li><a href="/weekly/monday/">Monday</a></li>
                 <li><a href="/weekly/tuesday/">Tuesday</a></li>
                 <li><a href="/weekly/wednesday/">Wednesday</a></li>

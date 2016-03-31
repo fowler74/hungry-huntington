@@ -62,14 +62,14 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 .contactButton div {transition:.4s ease;}
 .contact {width:0px; transition:.4s ease; overflow:hidden; background:#e0e0e0; height:300px; position:absolute; right:0; top:0; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);}
 .rotate {transition:.4s ease; transform:rotate(135deg);}
-#restaurants .contact h3 {width:260px; color:#424242;}
-#restaurants .contact ul {padding:20px; width:260px;}
-#restaurants .contact li {color:#424242; font-weight:500px; line-height:25px; font-size:16px;}
+.contact h3 {width:260px; color:#424242;}
+.contact ul {padding:20px; width:260px;}
+.contact li {color:#424242; font-weight:500px; line-height:25px; font-size:16px;}
 
 /* Restaurants */
-#restaurants li {width:100%; height:60px; margin-bottom:20px; background-color:#fff; box-sizing:border-box; font-size:20px; line-height:40px; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
-#restaurants li a {color:#424242; display:block; padding:10px 20px;}
-#restaurants li:hover {background-color:#e0e0e0;}
+.pageList li {width:100%; height:60px; margin-bottom:20px; background-color:#fff; box-sizing:border-box; font-size:20px; line-height:40px; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
+.pageList li a {color:#424242; display:block; padding:10px 20px;}
+.pageList li:hover {background-color:#e0e0e0;}
 
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
