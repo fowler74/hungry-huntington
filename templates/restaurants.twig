@@ -25,11 +25,9 @@
             {% include 'inc/deal-template.twig' %}
             {% endfor %}
         {% elseif deals.getPageData('callMethod') == 'getDeal' %}
-            {#
-            will include a get deal template. it will need to use one of the
-            segment variables from the HungryHuntington page property to get the
-            deals for the specified deal
-            #}
+            {% for deal in deals.getDeal(deals.getPageData('urlTitle')[1], deals.getPageData('urlTitle')[2]) %}
+            {% include 'inc/deal-template.twig' %}
+            {% endfor %}
         {% endif %}
     </div>
 </section>

@@ -116,6 +116,24 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getDeal($companyUrl, $dealUrl) {
+        $query = 'SELECT d.headline, d.url_title, d.description, c.name,
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal
+        FROM deals d
+        JOIN companies c
+        ON c.company_id = d.company_id
+        LEFT JOIN types_of_deals t
+        ON t.type_id = d.type_id
+        WHERE d.deleted = 0
+        AND c.url_title = :c_url_title
+        AND d.url_title = :d_url_title';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':c_url_title', $companyUrl, \PDO::PARAM_STR);
+        $stmt->bindParam(':d_url_title', $dealUrl, \PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function getDealsStartingToday() {
         $order = $this->orderStartToday();
         $query = 'SELECT d.headline, d.url_title, d.description, c.name,
