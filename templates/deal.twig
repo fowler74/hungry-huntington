@@ -3,17 +3,20 @@
 <section>
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getCompanies' %}
+        <h1>Restaurants</h1>
             {#
             will include a get companies template. it will use the getCompanies
             method in the HungryHuntington class.
             #}
         {% elseif deals.getPageData('callMethod') == 'getCompany' %}
+        <h1>Company name</h1>
             {#
             will include a get company template. it will need to use one of the
             segment variables from the HungryHuntington page property to get the
             deals for the specified company
             #}
         {% elseif deals.getPageData('callMethod') == 'getDeal' %}
+        <h1>Deal name</h1>
             {#
             will include a get deal template. it will need to use one of the
             segment variables from the HungryHuntington page property to get the
