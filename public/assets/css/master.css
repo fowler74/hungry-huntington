@@ -11,30 +11,25 @@ table{border-collapse:collapse;border-spacing:0;}
 html {height:100%;}
 body {height:100%; /*font-family: 'Open Sans', sans-serif;*/ font-family: 'Roboto', sans-serif;}
 .bodyWrap {min-height:100%; position:relative; }
-::selection {}
+::selection {background:rgba(244, 67, 54, 0.3);}
 .wrap {width:960px; margin:auto;}
 .clear {clear:both;}
 .beforeFooter {padding-bottom:160px; clear:both;}
 a {text-decoration:none;}
 
 /* Display */
-.hide {display:none;}
+.none {display:none;}
 .block {display:block;}
 
 /* Desktop/Mobile */
 .desktop {display:block;}
 .mobile {display:none;}
-@media screen and (max-width:960px){
-	.desktop {display:none;}
-	.mobile {display:block;}
-	.wrap {width:100%;}
-}
 
 /* Typography */
 h1 {font-size:30px; line-height:50px; color:#fff; font-weight:500;}
-h2 {color:#F44336; font-weight:700; font-size:30px; margin-bottom:15px; padding:25px 0 30px 0;}
+h2 {color:#F44336; font-weight:700; font-size:30px; padding:25px 0 30px 0;}
 h3 {font-size:20px; line-height:40px; color:#fff; font-weight:500; padding-top:15px; padding-left:20px;}
-p {font-size:16px; margin-bottom:20px; line-height:23px;}
+p  {font-size:16px; margin-bottom:20px; line-height:23px;}
 
 /* Header */
 header{width:100%; min-width:960px; position:fixed; top:0; z-index:999999; height:70px; background:#fff;}
@@ -46,13 +41,13 @@ header nav ul li:hover {border-bottom:5px solid #F44336;}
 header nav ul li.here {}
 header nav ul li a {color:#F44336; padding:0 13px; display:block;}
 
+/* Side Navigation */
 .sideNav {width:60px; height:60px; cursor:pointer; float:left; text-align:center; margin-top:5px; margin-left:12px;}
 .sideNav .material-icons {font-size:24px; color:#F44336; line-height:60px;}
 aside {position:fixed; overflow:scroll; width:240px; height:100%; z-index:99999999; background-color:#fff; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); left:-270px; transition:.3s ease;}
 aside nav {padding:12px 0;}
 aside nav ul {}
 aside nav ul li {padding:18px 0 17px 24px; cursor:pointer; color:#424242; font-size:16px; font-weight:700;}
-/*aside nav ul li:active {background-color:#e0e0e0;}*/
 aside nav ul li a {color:#424242;}
 aside nav ul li ul {margin-top:13px; display:none;}
 aside nav ul li ul li:last-child {padding-bottom:0;}
@@ -66,6 +61,7 @@ aside .logo img {width:70px;}
 section.page-title {width:100%; min-width:960px; height:50px; background-color:#F44336; position:fixed; top:70px; left:0; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); z-index:999999;}
 section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 
+/* Deal */
 .deal {width:100%; height:300px; float:left; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); margin:20px 0; position:relative;}
 .googleMap {width:300px; height:300px; float:left;}
 .info {margin-left:25px; float:left; width:600px;}
@@ -77,9 +73,13 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 .contact ul {padding:20px; width:260px;}
 .contact li {color:#424242; font-weight:500px; line-height:25px; font-size:16px;}
 
+/* Restaurants */
+#restaurants li {width:100%; height:60px; margin-bottom:20px; background-color:#fff; box-sizing:border-box; font-size:20px; line-height:40px; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
+#restaurants li a {color:#424242; display:block; padding:10px 20px;}
+#restaurants li:hover {background-color:#e0e0e0;}
+
+/* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
-.block {display:block;}
-.none {display:none;}
 
 /* Footer */
 footer {position:absolute; bottom:0; width:100%; min-width:960px; height:160px; background-color:#e0e0e0;}
@@ -88,11 +88,16 @@ footer span {font-size:16px; color:#424242; display:block; text-align:center;}
 footer .copyright {position:absolute; bottom:0; left:0; width:100%; min-width:960px; height:30px; background-color:#424242;}
 footer .copyright span {color:#fff; font-size:10px; display:block; text-align:center; line-height:30px;}
 
-/* Mobile Styles */
+/* Min-Width 1500px */
 @media screen and (min-width:1500px){
 	aside {left:0;}
 }
+
+/* Max-Width 960px */
 @media screen and (max-width:960px) {
+	.desktop {display:none;}
+	.mobile {display:block;}
+	.wrap {width:100%;}
 	img {max-width:100%;}
 	section {}
 	section.page-title {}
