@@ -1,6 +1,11 @@
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
-<section>
+<section class="page-title">
+	<div class="wrap">
+		<h1>Today's Deals</h1>
+	</div>
+</section>
+<section class="top">
     <div class="wrap">
         {% for deal in deals.getDeals() %}
         <div class="deal {{ deal.type_of_deal }}">
