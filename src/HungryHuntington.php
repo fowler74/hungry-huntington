@@ -58,6 +58,14 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Get the name of the Restaurant
+     *
+     * Might use $this->pages['urlTitle'][1]
+     *
+     * @param  [string] $companyUrl [url-title-for-restaurant]
+     * @return [string]             [Title for Restaurant]
+     */
     public function getCompanyName($companyUrl) {
         $query = 'SELECT name
         FROM companies
@@ -70,6 +78,14 @@ class HungryHuntington {
         return $data['name'];
     }
 
+    /**
+     * Get name of deal
+     *
+     * Might use $this->pages['urlTitle'][2]
+     *
+     * @param  [string] $dealUrl [url-title-for-title]
+     * @return [string]          [Title for deal]
+     */
     public function getDealName($dealUrl) {
         $query = 'SELECT headline
         FROM deals
