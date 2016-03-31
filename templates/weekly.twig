@@ -1,9 +1,21 @@
+{% if deals.getPageData('callMethod') == 'getWeek'%}
+    {% set title = "Weekly" %}
+{% elseif deals.getPageData('callMethod') == 'getDay' %}
+    {% set title = "Day of week" %}
+{% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
-<section>
+<section class="page-title">
+	<div class="wrap">
+		<h1>{{ title }}</h1>
+	</div>
+</section>
+<section class="top">
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getWeek'%}
-        <h1>Weekly deals</h1>
+            {% for deal in deals.getDealsStartingToday() %}
+            {% include 'inc/deal-template.twig' %}
+            {% endfor %}
             {#
             will include a get week template. need to create a method for this.
             it will get the deals for today then deals for the following days.
@@ -15,7 +27,7 @@
             If it is Tuesday, then it would go 2, 3, 4, 5, 6, 0, 1
             #}
         {% elseif deals.getPageData('callMethod') == 'getDay' %}
-        <h1>Day of week goes here</h1>
+
             {#
             will include a get day template. need to create a method for this.
             it will need to use one of the segment variables from the

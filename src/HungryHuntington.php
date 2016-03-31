@@ -116,6 +116,21 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getDealsStartingToday() {
+        $order = $this->orderStartToday();
+        $query = 'SELECT d.headline, dow.dow_name
+            FROM deals d
+            JOIN dow_deal b
+            ON d.id = b.deals_id_fk
+            JOIN days_of_week dow
+            ON dow.dow_id = b.dow_id_fk
+            #WHERE dow.dow_id IN (0, 1, 2, 3, 4, 5, 6)
+            ORDER BY FIELD(dow.dow_id, ' . $order . ')';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function getTypes() {
         $query = 'SELECT type_id, type_of_deal
         FROM types_of_deals
@@ -123,6 +138,34 @@ class HungryHuntington {
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    protected function orderStartToday() {
+        $daysOfWeek = [0, 1, 2, 3, 4, 5, 6];
+        $order = '';
+        $today = date("N") - 1;
+        $i = 0;
+        $notFound = true;
+        while($notFound) {
+            if($today == $daysOfWeek[$i]) {
+            	// Found the start day
+                $order = $i;
+                $i++;
+            }
+            if($i < 7) {
+            	// Find the rest of the days
+            	$order .= ', ' . $i;
+            	$i++;
+            }
+            if($i >= 7) {
+            	for($x=0;$x<$today;$x++) {
+            		$t = $i + $x;
+            		$order .= ',' . $x;
+            	}
+            	$notFound = false;
+            }
+        }
+        return $order;
     }
 
     public function getPageData($key = '') {
