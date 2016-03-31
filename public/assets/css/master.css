@@ -74,6 +74,10 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
 
+/* Display */
+.none {display:none;}
+.block {display:block;}
+
 /* Desktop/Mobile */
 .desktop {display:block;}
 .mobile {display:none;}
