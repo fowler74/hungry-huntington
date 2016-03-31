@@ -1,7 +1,7 @@
 {% if deals.getPageData('callMethod') == 'getWeek'%}
     {% set title = "Weekly" %}
 {% elseif deals.getPageData('callMethod') == 'getDay' %}
-    {% set title = "Day of week" %}
+    {% set title = deals.getPageData('urlTitle')[2] %}
 {% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
