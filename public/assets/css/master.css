@@ -17,17 +17,10 @@ body {height:100%; /*font-family: 'Open Sans', sans-serif;*/ font-family: 'Robot
 .beforeFooter {padding-bottom:160px; clear:both;}
 a {text-decoration:none;}
 
-/* Display */
-.none {display:none;}
-.block {display:block;}
-
-/* Desktop/Mobile */
-.desktop {display:block;}
-.mobile {display:none;}
-
 /* Typography */
 h1 {font-size:30px; line-height:50px; color:#fff; font-weight:500;}
 h2 {color:#F44336; font-weight:700; font-size:30px; padding:25px 0 30px 0;}
+h2 a {color:#F44336;}
 h3 {font-size:20px; line-height:40px; color:#fff; font-weight:500; padding-top:15px; padding-left:20px;}
 p  {font-size:16px; margin-bottom:20px; line-height:23px;}
 
@@ -80,6 +73,10 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
+
+/* Desktop/Mobile */
+.desktop {display:block;}
+.mobile {display:none;}
 
 /* Footer */
 footer {position:absolute; bottom:0; width:100%; min-width:960px; height:160px; background-color:#e0e0e0;}
