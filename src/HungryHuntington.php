@@ -175,6 +175,7 @@ class HungryHuntington {
             WHERE dow.dow_name = :dow
             AND d.deleted = 0';
         $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':dow', $dow, \PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
