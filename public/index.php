@@ -18,7 +18,7 @@ $router     = new Wappr\Router;
 $controller = new Wappr\Controller($_POST);
 $router->add('*', 'index');
 $router->add('admin', 'admin');
-$router->add('deal', 'deal', ['getCompanies', 'getCompany', 'getDeal'], true);
+$router->add('restaurants', 'restaurants', ['getCompanies', 'getCompany', 'getDeal'], true);
 $router->add('weekly', 'weekly', ['getWeek', 'getDay'], true);
 $page = $router->dispatch();
 // Pass the page info to the HungryHuntington class
