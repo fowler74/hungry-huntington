@@ -7,23 +7,26 @@
 {% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
-<section>
+<section class="page-title">
+	<div class="wrap">
+		<h1>{{ title }}</h1>
+	</div>
+</section>
+<section class="top">
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getCompanies' %}
-        <h1>{{ title }}</h1>
-            {#
-            will include a get companies template. it will use the getCompanies
-            method in the HungryHuntington class.
-            #}
+        <ul>
+        {% for deal in deals.getCompanies() %}
+            <li><a href="/deal/{{ deal.url_title }}/"></a>{{ deal.name }}</li>
+        {% endfor %}
+        </ul>
         {% elseif deals.getPageData('callMethod') == 'getCompany' %}
-        <h1>{{ title }}</h1>
             {#
             will include a get company template. it will need to use one of the
             segment variables from the HungryHuntington page property to get the
             deals for the specified company
             #}
         {% elseif deals.getPageData('callMethod') == 'getDeal' %}
-        <h1>{{ title }}</h1>
             {#
             will include a get deal template. it will need to use one of the
             segment variables from the HungryHuntington page property to get the

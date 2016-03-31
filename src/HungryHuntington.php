@@ -50,7 +50,7 @@ class HungryHuntington {
     }
 
     public function getCompanies() {
-        $query = 'SELECT company_id, name
+        $query = 'SELECT company_id, name, url_title
         FROM companies
         LIMIT 100';
         $stmt = $this->db->prepare($query);
