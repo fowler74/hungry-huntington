@@ -35,7 +35,8 @@ class HungryHuntington {
     public function getDeals() {
         # Waiting on the data
         $query = 'SELECT id, c.name, headline, description,
-        c.google_map, c.website, c.phone, c.address, t.type_of_deal
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal,
+        c.url_title, d.url_title as deal_url
         FROM deals d
         LEFT JOIN companies c
         ON c.company_id = d.company_id
@@ -101,8 +102,9 @@ class HungryHuntington {
     }
 
     public function getCompanyDeals($companyUrl) {
-        $query = 'SELECT d.headline, d.url_title, d.description, c.name,
-        c.google_map, c.website, c.phone, c.address, t.type_of_deal
+        $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal,
+        c.url_title
         FROM deals d
         JOIN companies c
         ON c.company_id = d.company_id
@@ -117,8 +119,9 @@ class HungryHuntington {
     }
 
     public function getDeal($companyUrl, $dealUrl) {
-        $query = 'SELECT d.headline, d.url_title, d.description, c.name,
-        c.google_map, c.website, c.phone, c.address, t.type_of_deal
+        $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal,
+        c.url_title
         FROM deals d
         JOIN companies c
         ON c.company_id = d.company_id
@@ -136,8 +139,9 @@ class HungryHuntington {
 
     public function getDealsStartingToday() {
         $order = $this->orderStartToday();
-        $query = 'SELECT d.headline, d.url_title, d.description, c.name,
-        c.google_map, c.website, c.phone, c.address, t.type_of_deal
+        $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
+        c.google_map, c.website, c.phone, c.address, t.type_of_deal,
+        c.url_title
             FROM deals d
             JOIN companies c
             ON c.company_id = d.company_id
