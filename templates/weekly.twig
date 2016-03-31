@@ -2,7 +2,7 @@
 {% include 'inc/header.twig' %}
 <section>
     <div class="wrap">
-        {{ if deals.getPageData('callMethod') == 'getWeek'}}
+        {% if deals.getPageData('callMethod') == 'getWeek'%}
         <h1>Weekly deals</h1>
             {#
             will include a get week template. need to create a method for this.
@@ -14,7 +14,7 @@
 
             If it is Tuesday, then it would go 2, 3, 4, 5, 6, 0, 1
             #}
-        {{ elseif deals.getPageData('callMethod') == 'getDay' }}
+        {% elseif deals.getPageData('callMethod') == 'getDay' %}
         <h1>Day of week goes here</h1>
             {#
             will include a get day template. need to create a method for this.
@@ -22,5 +22,5 @@
             HungryHuntington page property to get the deals for the specified
             day of the week. It will convert the slug to the corresponding int
             #}
-        {{ endif }}
+        {% endif %}
 {% include 'inc/footer.twig' %}
