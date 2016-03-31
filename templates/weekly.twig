@@ -10,22 +10,18 @@
 		<h1>{{ title }}</h1>
 	</div>
 </section>
-<section class="top">
+<section class="top" id="restaurants">
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getWeek'%}
-            {% for deal in deals.getDealsStartingToday() %}
-            {% include 'inc/deal-template.twig' %}
-            {% endfor %}
-            {#
-            will include a get week template. need to create a method for this.
-            it will get the deals for today then deals for the following days.
-            0 - Sunday
-            1 - Monday
-            2 - Tuesday
-            ...
-
-            If it is Tuesday, then it would go 2, 3, 4, 5, 6, 0, 1
-            #}
+            <ul>
+                <li><a href="/weekly/monday/">Monday</a></li>
+                <li><a href="/weekly/tuesday/">Tuesday</a></li>
+                <li><a href="/weekly/wednesday/">Wednesday</a></li>
+                <li><a href="/weekly/thursday/">Thursday</a></li>
+                <li><a href="/weekly/friday/">Friday</a></li>
+                <li><a href="/weekly/saturday/">Saturday</a></li>
+                <li><a href="/weekly/sunday/">Sunday</a></li>
+            </ul>
         {% elseif deals.getPageData('callMethod') == 'getDay' %}
 
             {#
