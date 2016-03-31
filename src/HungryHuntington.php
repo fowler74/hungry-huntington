@@ -52,6 +52,8 @@ class HungryHuntington {
     public function getCompanies() {
         $query = 'SELECT company_id, name, url_title
         FROM companies
+        WHERE hidden = 0
+        ORDER BY name ASC
         LIMIT 100';
         $stmt = $this->db->prepare($query);
         $stmt->execute();
