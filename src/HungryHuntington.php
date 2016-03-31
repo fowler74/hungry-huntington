@@ -58,6 +58,30 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getCompanyName($companyUrl) {
+        $query = 'SELECT name
+        FROM companies
+        WHERE url_title = :url_title
+        LIMIT 1';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':url_title', $companyUrl, \PDO::PARAM_STR);
+        $stmt->execute();
+        $data = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $data['name'];
+    }
+
+    public function getCompanyDeals($companyUrl) {
+        $query = 'SELECT d.headline, d.url_title, d.description, c.name
+        FROM deals d
+        JOIN companies c
+        ON c.company_id = d.company_id
+        WHERE c.url_title = :url_title';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':url_title', $companyUrl, \PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function getTypes() {
         $query = 'SELECT type_id, type_of_deal
         FROM types_of_deals

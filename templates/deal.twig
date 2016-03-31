@@ -1,7 +1,7 @@
 {% if deals.getPageData('callMethod') == 'getCompanies' %}
-    {% set page = deals.getCompanies() %}
-    {% set title = page.url %}
-    {{ title }}
+    {% set title = "Restaurants" %}
+{% elseif deals.getPageData('callMethod') == 'getCompany' %}
+    {% set title = deals.getCompanyName(deals.getPageData('url')) %}    
 {% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
