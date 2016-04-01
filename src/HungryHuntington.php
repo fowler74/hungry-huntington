@@ -173,7 +173,8 @@ class HungryHuntington {
             JOIN days_of_week dow
             ON dow.dow_id = b.dow_id_fk
             WHERE dow.dow_name = :dow
-            AND d.deleted = 0';
+            AND d.deleted = 0
+            ORDER BY name ASC';
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':dow', $dow, \PDO::PARAM_STR);
         $stmt->execute();
