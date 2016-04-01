@@ -8,7 +8,7 @@
 {% include 'inc/header.twig' %}
 <section class="page-title">
 	<div class="wrap">
-		<h1>{{ title|capitalize }} {{ type|capitalize }}</h1>
+		<h1>{{ title|capitalize }} {{ type|capitalize|replace({'-':' '}) }}</h1>
 	</div>
 </section>
 <section class="top">
