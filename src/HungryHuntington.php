@@ -76,13 +76,13 @@ class HungryHuntington {
         ON c.company_id = d.company_id
         LEFT JOIN types_of_deals t
         ON t.type_id = d.type_id
-        WHERE d.deleted = 0';
+        WHERE d.deleted = 0 ';
         if($type == 'drink-deals') {
             $query .= 'AND t.type_id = 3';
         } elseif($type == 'food-deals') {
             $query .= 'AND t.type_id != 3';
         }
-        $query .= 'ORDER BY RAND()
+        $query .= ' ORDER BY RAND()
         LIMIT 1';
         $stmt = $this->db->prepare($query);
         $stmt->execute();
