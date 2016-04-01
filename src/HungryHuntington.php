@@ -33,7 +33,6 @@ class HungryHuntington {
      * @return Array an associative array with all the deals
      */
     public function getDeals() {
-        # Waiting on the data
         $query = 'SELECT id, c.name, headline, description,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
         c.url_title, d.url_title as deal_url
@@ -46,6 +45,29 @@ class HungryHuntington {
         ORDER BY c.name ASC
         LIMIT 1000';
         $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getTodaysDeals() {
+        $dow = date("l");
+        $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
+            c.google_map, c.website, c.phone, c.address, t.type_of_deal,
+            c.url_title
+            FROM deals d
+            JOIN companies c
+            ON c.company_id = d.company_id
+            LEFT JOIN types_of_deals t
+            ON t.type_id = d.type_id
+            JOIN dow_deal b
+            ON d.id = b.deals_id_fk
+            JOIN days_of_week dow
+            ON dow.dow_id = b.dow_id_fk
+            WHERE dow.dow_name = :dow
+            AND d.deleted = 0
+            ORDER BY name ASC';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':dow', $dow, \PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }

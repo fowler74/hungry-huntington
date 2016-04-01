@@ -7,7 +7,7 @@
 </section>
 <section class="top">
     <div class="wrap">
-        {% for deal in deals.getDeals() %}
+        {% for deal in deals.getTodaysDeals() %}
         {% include 'inc/deal-template.twig' %}
         {% endfor %}
     </div>
