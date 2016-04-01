@@ -20,6 +20,7 @@ $router->add('*', 'index');
 $router->add('admin', 'admin');
 $router->add('restaurants', 'restaurants', ['getCompanies', 'getCompany', 'getDeal'], true);
 $router->add('weekly', 'weekly', ['getWeek', 'getDay'], true);
+$router->add('bar', 'bar');
 $page = $router->dispatch();
 // Pass the page info to the HungryHuntington class
 $hungry->page = $page;

@@ -1,12 +1,15 @@
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
+<section class="page-title">
+	<div class="wrap">
+		<h1>Bar Deals</h1>
+	</div>
+</section>
 <section>
     <div class="wrap">
-        <h1>Bar deals</h1>
-        {#
-            Need to create the method for this. It will just get all of the bar
-            deals for now.
-        #}
+        {% for deal in deals.getBarDeals() %}
+        {% include 'inc/deal-template.twig' %}
+        {% endfor %}
     </div>
 </section>
 {% include 'inc/footer.twig' %}
