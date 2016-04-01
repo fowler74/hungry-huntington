@@ -1,13 +1,14 @@
 {% if deals.getPageData('callMethod') == 'getRandom'%}
     {% set title = "Random Food Deal" %}
 {% elseif deals.getPageData('callMethod') == 'getRandomDeal' %}
-    {% set title = "Random Bar Deal" %}
+    {% set title = "Random" %}
+    {% set type = deals.getPageData('urlTitle')[1] %}
 {% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
 <section class="page-title">
 	<div class="wrap">
-		<h1>{{ title|capitalize }}</h1>
+		<h1>{{ title|capitalize }} {{ type|capitalize }}</h1>
 	</div>
 </section>
 <section class="top">
