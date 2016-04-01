@@ -1,6 +1,6 @@
-{% if deals.getPageData('callMethod') == 'getRandomFood'%}
+{% if deals.getPageData('callMethod') == 'getRandom'%}
     {% set title = "Random Food Deal" %}
-{% elseif deals.getPageData('callMethod') == 'getRandomBar' %}
+{% elseif deals.getPageData('callMethod') == 'getRandomDeal' %}
     {% set title = "Random Bar Deal" %}
 {% endif %}
 {% include 'inc/head.twig' %}
@@ -12,13 +12,13 @@
 </section>
 <section class="top">
     <div class="wrap">
-        {% if deals.getPageData('callMethod') == 'getRandomFood'%}
+        {% if deals.getPageData('callMethod') == 'getRandom'%}
             <ul class="pageList">
                 <li><a href="/random/food-deals/">Food Deals</a></li>
                 <li><a href="/random/bar-deals/">Bar Deals</a></li>
             </ul>
-        {% elseif deals.getPageData('callMethod') == 'getRandomBar' %}
-            
+        {% elseif deals.getPageData('callMethod') == 'getRandomDeal' %}
+
         {% endif %}
     </div>
 </section>

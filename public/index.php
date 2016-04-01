@@ -21,7 +21,7 @@ $router->add('admin', 'admin');
 $router->add('restaurants', 'restaurants', ['getCompanies', 'getCompany', 'getDeal'], true);
 $router->add('weekly', 'weekly', ['getWeek', 'getDay'], true);
 $router->add('bar', 'bar');
-$router->add('random', 'random', ['getRandom', 'getRandomFood', 'getRandomBar'], true);
+$router->add('random', 'random', ['getRandom', 'getRandomDeal'], true);
 $page = $router->dispatch();
 // Pass the page info to the HungryHuntington class
 $hungry->page = $page;
