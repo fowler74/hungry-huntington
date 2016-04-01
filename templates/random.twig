@@ -19,7 +19,7 @@
                 <li><a href="/random/drink-deals/">Bar Deals</a></li>
             </ul>
         {% elseif deals.getPageData('callMethod') == 'getRandomDeal' %}
-            {% for deal in deals.getDealsForDow(deals.getPageData('urlTitle')[1]) %}
+            {% for deal in deals.getRandomDeal(deals.getPageData('urlTitle')[1]) %}
             {% include 'inc/deal-template.twig' %}
             {% endfor %}
         {% endif %}
