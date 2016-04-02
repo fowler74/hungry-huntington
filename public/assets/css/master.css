@@ -38,6 +38,9 @@ header nav ul li a {color:#F44336; padding:0 13px; display:block;}
 .sideNav {width:60px; height:60px; cursor:pointer; float:left; text-align:center; margin-top:5px; margin-left:12px;}
 .sideNav .material-icons {font-size:24px; color:#F44336; line-height:60px;}
 aside {position:fixed; overflow:scroll; width:240px; height:100%; z-index:99999999; background-color:#fff; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); left:-270px; transition:.3s ease;}
+aside::-webkit-scrollbar {width:0 !important}
+aside {-ms-overflow-style:none;}
+aside {overflow:-moz-scrollbars-none;}
 aside nav {padding:12px 0;}
 aside nav ul {}
 aside nav ul li {padding:18px 0 17px 24px; cursor:pointer; color:#424242; font-size:16px; font-weight:700;}
