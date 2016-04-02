@@ -79,7 +79,23 @@ class Controller extends HungryHuntington {
             $stmt->bindParam(':description', $this->post['description'], \PDO::PARAM_STR);
             $stmt->bindParam(':type_id', $this->post['type'], \PDO::PARAM_INT);
             $stmt->bindParam(':added_by', $this->userId, \PDO::PARAM_INT);
+            $this->addDaysOfWeek($this->db->lastInsertId());
             return $stmt->execute();
+        }
+    }
+
+    protected function addDaysOfWeek($dealId) {
+        if($this->loggedIn) {
+            $dows = '';
+            for($i=0;$i<count($this->post['dow']);$i++) {
+                $dows .= '(' . $dealId . ', ' . $this->post['dow'][$i] . '), ';
+            }
+            $dows = rtrim($dows, ', ');
+            $query = 'INSERT INTO dow_deal
+            (deals_id_fk, dow_id_fk)
+            VALUES ' . $dows;
+            $stmt = $this->db->prepare($query);
+            $
         }
     }
 
