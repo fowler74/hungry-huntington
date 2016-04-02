@@ -95,7 +95,7 @@ class Controller extends HungryHuntington {
             (deals_id_fk, dow_id_fk)
             VALUES ' . $dows;
             $stmt = $this->db->prepare($query);
-            $
+            $stmt->execute();
         }
     }
 
