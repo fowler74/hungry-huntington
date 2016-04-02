@@ -1,6 +1,7 @@
 {
     "require": {
         "twig/twig": "~1.0",
+        "php-http/discovery" : "^0.6.2",
         "mailgun/mailgun-php": "~2.0"
     }
 }
