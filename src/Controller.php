@@ -184,7 +184,7 @@ class Controller extends HungryHuntington {
     }
 
     // Using this function I found on stackoverflow: http://stackoverflow.com/a/9535967
-    function slugit($string, $separator = '-')
+    function sluggit($string, $separator = '-')
     {
         $accents_regex = '~&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i';
         $special_cases = array('&' => 'and', "'" => '');
