@@ -244,11 +244,14 @@ footer img:hover { opacity: .83; }
 
 footer img:focus , footer a:focus { outline: none; }
 #dows {height:115px;}
-
-tr:nth-child(odd) {
-	background: #eee;
+table {
+    border-collapse: collapse;
 }
-tr:nth-child(even) {
+table > tbody > tr:nth-child(odd) {
+	background: #eee;
+	border-top: 1px solid #F44336;
+}
+table > tbody > tr:nth-child(even) {
 	border-bottom:1px solid #F44336;
 }
 
