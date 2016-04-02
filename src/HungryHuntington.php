@@ -310,7 +310,7 @@ class HungryHuntington {
     }
 
     public function getOgUrl() {
-        $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         return $actual_link;
     }
 
