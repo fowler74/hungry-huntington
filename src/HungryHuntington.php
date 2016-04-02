@@ -254,6 +254,17 @@ class HungryHuntington {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getEmails() {
+        $query = 'SELECT id, email_to, email_from, email_subject, email_body,
+        email_received
+        FROM emails
+        ORDER BY id DESC
+        LIMIT 1000';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     protected function orderStartToday() {
         $daysOfWeek = [0, 1, 2, 3, 4, 5, 6];
         $order = '';

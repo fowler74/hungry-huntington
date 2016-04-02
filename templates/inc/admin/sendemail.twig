@@ -1,6 +1,28 @@
 <hgroup>
-    <h2>Send Email</h2>
+    <h2>Email</h2>
 </hgroup>
+<table>
+    <thead>
+        <tr>
+            <th>To</th>
+            <th>From</th>
+            <th>Subject</th>
+            <th>Body</th>
+            <th>Received</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for email in deals.getEmails() %}
+    <tr>
+        <td>{{ email.email_to }}</td>
+        <td>{{ email.email_from }}</td>
+        <td>{{ email.email_subject }}</td>
+        <td>{{ email.email_body }}</td>
+        <td>{{ email.email_received }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
 <form action="" method="POST">
     <div class="group">
       <input type="text" name="email"><span class="highlight"></span><span class="bar"></span>
