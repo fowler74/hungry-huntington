@@ -7,7 +7,6 @@
             <th>To</th>
             <th>From</th>
             <th>Subject</th>
-            <th>Body</th>
             <th>Received</th>
         </tr>
     </thead>
@@ -17,8 +16,10 @@
         <td>{{ email.email_to }}</td>
         <td>{{ email.email_from }}</td>
         <td>{{ email.email_subject }}</td>
-        <td>{{ email.email_body }}</td>
         <td>{{ email.email_received }}</td>
+    </tr>
+    <tr>
+        <td colspan="4">{{ email.email_body }}</td>
     </tr>
 {% endfor %}
     </tbody>

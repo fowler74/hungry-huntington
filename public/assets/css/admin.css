@@ -244,6 +244,13 @@ footer img:hover { opacity: .83; }
 
 footer img:focus , footer a:focus { outline: none; }
 #dows {height:115px;}
+
+tr:nth-child(odd) {
+	background: #4a89dc;
+	text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+	color:#fff;
+}
+
 .none {
   all: initial;
   * {
