@@ -1,5 +1,6 @@
 {
     "require": {
-        "twig/twig": "~1.0"
+        "twig/twig": "~1.0",
+        "mailgun/mailgun-php": "~2.0"
     }
 }

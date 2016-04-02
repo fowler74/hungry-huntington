@@ -5,4 +5,6 @@ return [
     'database' => '',
     'username' => '',
     'password' => '',
+    'api_key'  => '',
+    'domain'   => '',
 ];

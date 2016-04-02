@@ -13,9 +13,11 @@ class HungryHuntington {
     public $version = '1.1.0';
     public $page;
     protected $db;
+    protected $d;
 
     public function __construct() {
         $d = self::loadConfig();
+        $this->d = self::loadConfig();
         try {
             $this->db = new \PDO("mysql:host=" . $d['hostname'] . ";dbname="
                     . $d['database'] . ";charset=utf8",
@@ -290,6 +292,10 @@ class HungryHuntington {
 
     protected function getDb() {
         return $this->db;
+    }
+
+    protected function getD() {
+        return $this->d;
     }
 
     /**

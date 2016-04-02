@@ -6,6 +6,7 @@ class Controller extends HungryHuntington {
     public $userId;
 
     protected $db;
+    protected $d;
     protected $actions;
     protected $post;
 
