@@ -1,5 +1,7 @@
 <?php namespace Wappr;
 
+use Mailgun\Mailgun;
+
 class Controller extends HungryHuntington {
     public $loggedIn;
     public $username;
@@ -15,6 +17,7 @@ class Controller extends HungryHuntington {
         $this->loadActions();
         parent::__construct();
         $this->db = parent::getDb();
+        $this->d  = parent::getD();
     }
 
     public function run() {
@@ -161,6 +164,18 @@ class Controller extends HungryHuntington {
     protected function deluser() {
         if($this->loggedIn) {
 
+        }
+    }
+
+    protected function sendemail() {
+        if($this->loggedIn) {
+            $mg = new Mailgun($this->d['api_key']);
+            $mg->sendMessage($this->d['domain'], array(
+                'from'    => 'support@hungryhuntington.com',
+                'to'      => $this->post['email'],
+                'subject' => $this->post['subject'],
+                'text'    => $this->post['body']
+            ));
         }
     }
 

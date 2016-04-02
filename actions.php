@@ -9,4 +9,5 @@ $actions = [
         'adduser',
         'deluser',
         'addcompany',
+        'send',
 ];
