@@ -34,6 +34,49 @@ textarea {
 select {
     width:100%;
 }
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: .3em 0 1em 0;
+    width: 100%;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #3160B6;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.ripples {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+}
+.ripplesCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+}
+.buttonBlue {
+  background: #4a89dc;
+  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
 </style>
 <section class="page-title">
 	<div class="wrap">
@@ -80,7 +123,9 @@ select {
                 <textarea name="deal_description" placeholder="Deal description"></textarea>
             </div>
             <input type="hidden" name="action" value="submitdeal">
-            <button type="submit" class="button buttonBlue">Submit deal</button>
+            <button type="submit" class="button buttonBlue">Submit deal
+              <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </button>
         </form>
     </div>
 </section>
