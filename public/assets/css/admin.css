@@ -243,7 +243,7 @@ footer img {
 footer img:hover { opacity: .83; }
 
 footer img:focus , footer a:focus { outline: none; }
-
+#dows {height:115px;}
 .none {
   all: initial;
   * {
