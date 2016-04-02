@@ -169,7 +169,8 @@ class Controller extends HungryHuntington {
 
     protected function sendemail() {
         if($this->loggedIn) {
-            $mg = new Mailgun($this->d['api_key']);
+            $client = new \Http\Adapter\Guzzle6\Client();
+            $mg = new Mailgun($this->d['api_key'], $client);
             $mg->sendMessage($this->d['domain'], array(
                 'from'    => 'support@hungryhuntington.com',
                 'to'      => $this->post['email'],
