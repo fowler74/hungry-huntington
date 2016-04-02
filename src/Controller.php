@@ -79,8 +79,9 @@ class Controller extends HungryHuntington {
             $stmt->bindParam(':description', $this->post['description'], \PDO::PARAM_STR);
             $stmt->bindParam(':type_id', $this->post['type'], \PDO::PARAM_INT);
             $stmt->bindParam(':added_by', $this->userId, \PDO::PARAM_INT);
+            $result = $stmt->execute();
             $this->addDaysOfWeek($this->db->lastInsertId());
-            return $stmt->execute();
+            return $result;
         }
     }
 
