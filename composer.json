@@ -1,8 +1,6 @@
 {
     "require": {
         "twig/twig": "~1.0",
-        "puli/cli": "^1.0",
         "mailgun/mailgun-php": "~2.0"
-    },
-    "minimum-stability": "beta"
+    }
 }
