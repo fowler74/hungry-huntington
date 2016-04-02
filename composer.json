@@ -4,5 +4,5 @@
         "puli/cli": "^1.0",
         "mailgun/mailgun-php": "~2.0"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "beta"
 }
