@@ -141,6 +141,7 @@ class Controller extends HungryHuntington {
     protected function addcompany() {
         if($this->loggedIn) {
             $url_title = $this->sluggit($this->post['name']);
+            $this->post['google_map'] = str_replace('http://', 'https://', $this->post['google_map']);
             $query = 'INSERT INTO companies
             (name, url_title, google_map, website, phone, address)
             VALUES
