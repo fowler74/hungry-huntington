@@ -1,0 +1,52 @@
+{% set title = "Submit Deal" %}
+{% include 'inc/head.twig' %}
+{% include 'inc/header.twig' %}
+<section class="page-title">
+	<div class="wrap">
+		<h1>Bar Deals</h1>
+	</div>
+</section>
+<section class="top">
+    <div class="wrap">
+        <form action="" method="POST">
+            <div class="group">
+                <input type="text" name="restaurant_name" placeholder="Restaurant name">
+            </div>
+            <div class="group">
+                <input type="text" name="restaurant_address" placeholder="Restaurant address">
+            </div>
+            <div class="group">
+                <input type="text" name="restaurant_phone" placeholder="Restaurant phone">
+            </div>
+            <div class="group">
+                <input type="text" name="restaurant_website" placeholder="Restaurant website">
+            </div>
+            <div class="group">
+                <input type="text" name="deal_headline" placeholder="Deal headline">
+            </div>
+            <div class="group">
+                <select name="deal_type">
+                    <option value="1">Daily</option>
+                    <option value="2">Weekly</option>
+                    <option value="3">Bar</option>
+                </select>
+            </div>
+            <div class="group">
+                <select id="dows" name="deal_dow[]" multiple>
+                    <option value="0">Monday</option>
+                    <option value="1">Tuesday</option>
+                    <option value="2">Wednesday</option>
+                    <option value="3">Thursday</option>
+                    <option value="4">Friday</option>
+                    <option value="5">Saturday</option>
+                    <option value="6">Sunday</option>
+                </select>
+            </div>
+            <div class="group">
+                <textarea name="deal_description" placeholder="Deal description"></textarea>
+            </div>
+            <input type="hidden" name="action" value="submitdeal">
+        </form>
+    </div>
+</section>
+{% include 'inc/footer.twig' %}

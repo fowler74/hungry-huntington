@@ -10,4 +10,5 @@ $actions = [
         'deluser',
         'addcompany',
         'sendemail',
+        'submitdeal',
 ];
