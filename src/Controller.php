@@ -161,6 +161,28 @@ class Controller extends HungryHuntington {
         }
     }
 
+    public function submitdeal() {
+        $dow = serialize($this->post['deal_dow']);
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $query = 'INSERT INTO submissions
+        (restaurant_name, restaurant_address, restaurant_phone, restaurant_website,
+        deal_headline, deal_type, deal_dow, deal_description, ip)
+        VALUES
+        (:restaurant_name, :restaurant_address, :restaurant_phone, :restaurant_website,
+        :deal_headline, :deal_type, :deal_dow, :deal_description, :ip)';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':restaurant_name', $this->post['restaurant_name'], \PDO::PARAM_STR);
+        $stmt->bindParam(':restaurant_address', $this->post['restaurant_address'], \PDO::PARAM_STR);
+        $stmt->bindParam(':restaurant_phone', $this->post['restaurant_phone'], \PDO::PARAM_STR);
+        $stmt->bindParam(':restaurant_website', $this->post['restaurant_website'], \PDO::PARAM_STR);
+        $stmt->bindParam(':deal_headline', $this->post['deal_headline'], \PDO::PARAM_STR);
+        $stmt->bindParam(':deal_type', $this->post['deal_type'], \PDO::PARAM_STR);
+        $stmt->bindParam(':deal_dow', $dow, \PDO::PARAM_STR);
+        $stmt->bindParam(':deal_description', $this->post['deal_description'], \PDO::PARAM_STR);
+        $stmt->bindParam(':ip', $ip, \PDO::PARAM_STR);
+        return $stmt->execute();
+    }
+
     protected function deluser() {
         if($this->loggedIn) {
 
