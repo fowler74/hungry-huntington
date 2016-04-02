@@ -309,6 +309,11 @@ class HungryHuntington {
         return $this->d;
     }
 
+    public function getOgUrl() {
+        $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        return $actual_link;
+    }
+
     /**
      * Load the config file
      *
