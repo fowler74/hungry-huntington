@@ -178,6 +178,25 @@ class Controller extends HungryHuntington {
                 'text'    => $this->post['body']
             ));
         }
+        $this->insertEmail(
+            $this->post['email'],
+            'support@hungryhuntington.com',
+            $this->post['subject'],
+            $this->post['body']
+        );
+    }
+
+    protected function insertEmail($to, $from, $subject, $body) {
+    	$query = 'INSERT INTO emails
+    	(email_to, email_from, email_subject, email_body)
+    	VALUES
+    	(:email_to, :email_from, :email_subject, :email_body)';
+    	$stmt = $this->db->prepare($query);
+    	$stmt->bindParam(':email_to', $to, \PDO::PARAM_STR);
+    	$stmt->bindParam(':email_from', $from, \PDO::PARAM_STR);
+    	$stmt->bindParam(':email_subject', $subject, \PDO::PARAM_STR);
+    	$stmt->bindParam(':email_body', $body, \PDO::PARAM_STR);
+    	$stmt->execute();
     }
 
     protected function checkLoggedIn() {
