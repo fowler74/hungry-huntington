@@ -4,7 +4,11 @@
 		<meta charset="UTF-8">
 		<title>{%if title %}{{title|capitalize}} | {% endif %}Hungry Huntington, WV</title>
 		<meta name="author" content="Wappr">
+		{% if description %}
+		<meta name="description" content="{{ description }}">
+		{% else %}
 		<meta name="description" content="{%if title %}{{title|capitalize}} | {% endif %}Restaurant Deals in Huntington, WV | Hungry Huntington">
+		{% endif %}
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.red-blue.min.css" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
