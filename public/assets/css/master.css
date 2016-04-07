@@ -68,6 +68,7 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 .contact h3 {width:260px; color:#424242;}
 .contact ul {padding:20px; width:260px;}
 .contact li {color:#424242; font-weight:500px; line-height:25px; font-size:16px;}
+span.btnSpan {display:block;}
 
 /* Restaurants */
 .pageList li {width:100%; height:auto; margin-bottom:20px; background-color:#fff; box-sizing:border-box; font-size:20px; line-height:30px; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
@@ -79,7 +80,7 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 
 /* Display */
 .none {display:none;}
-.block, .btnSpan {display:block;}
+.block {display:block;}
 
 /* Desktop/Mobile */
 .desktop {display:block;}
