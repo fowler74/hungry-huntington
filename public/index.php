@@ -16,13 +16,7 @@ require_once(ROOT . DS . 'vendor' . DS . 'autoload.php');
 $hungry     = new Wappr\HungryHuntington;
 $router     = new Wappr\Router;
 $controller = new Wappr\Controller($_POST);
-$router->add('*', 'index');
-$router->add('admin', 'admin');
-$router->add('restaurants', 'restaurants', ['getCompanies', 'getCompany', 'getDeal'], true);
-$router->add('weekly', 'weekly', ['getWeek', 'getDay'], true);
-$router->add('bar', 'bar');
-$router->add('random', 'random', ['getRandom', 'getRandomDeal'], true);
-$router->add('submit', 'submit', ['doNothing', 'doNothing'], true);
+require_once(ROOT . DS . 'routes.php');
 $page = $router->dispatch();
 // Pass the page info to the HungryHuntington class
 $hungry->page = $page;
