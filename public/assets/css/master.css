@@ -77,7 +77,7 @@ span.btnSpan {display:block;}
 
 /* Social Media Icons */
 .social {float:right;}
-.social .circle {width:40px; height:40px; background-color:rgba(256, 256, 256, .2); float:left; margin-top:5px; line-height:40px; text-align:center; font-size:25px; color:#f44336;}
+.social .circle {width:40px; height:40px; background-color:rgba(256, 256, 256, .2); border-radius:40px; float:left; margin-top:5px; line-height:40px; text-align:center; font-size:25px; color:#f44336;}
 
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
