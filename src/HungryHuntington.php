@@ -37,7 +37,7 @@ class HungryHuntington {
     public function getDeals() {
         $query = 'SELECT id, c.name, headline, description,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-        c.url_title, d.url_title as deal_url
+        c.url_title, c.directions, d.url_title as deal_url
         FROM deals d
         LEFT JOIN companies c
         ON c.company_id = d.company_id
@@ -54,7 +54,7 @@ class HungryHuntington {
     public function getBarDeals() {
         $query = 'SELECT id, c.name, headline, description,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-        c.url_title, d.url_title as deal_url
+        c.url_title, c.directions, d.url_title as deal_url
         FROM deals d
         LEFT JOIN companies c
         ON c.company_id = d.company_id
@@ -72,7 +72,7 @@ class HungryHuntington {
     public function getRandomDeal($type) {
         $query = 'SELECT id, c.name, headline, description,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-        c.url_title, d.url_title as deal_url
+        c.url_title, c.directions, d.url_title as deal_url
         FROM deals d
         LEFT JOIN companies c
         ON c.company_id = d.company_id
@@ -95,7 +95,7 @@ class HungryHuntington {
         $dow = date("l");
         $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
             c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-            c.url_title
+            c.directions, c.url_title
             FROM deals d
             JOIN companies c
             ON c.company_id = d.company_id
@@ -168,7 +168,7 @@ class HungryHuntington {
     public function getCompanyDeals($companyUrl) {
         $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-        c.url_title
+        c.directions, c.url_title
         FROM deals d
         JOIN companies c
         ON c.company_id = d.company_id
@@ -185,7 +185,7 @@ class HungryHuntington {
     public function getDeal($companyUrl, $dealUrl) {
         $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-        c.url_title
+        c.directions, c.url_title
         FROM deals d
         JOIN companies c
         ON c.company_id = d.company_id
@@ -205,7 +205,7 @@ class HungryHuntington {
         $order = $this->orderStartToday();
         $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-        c.url_title
+        c.directions, c.url_title
             FROM deals d
             JOIN companies c
             ON c.company_id = d.company_id
@@ -226,7 +226,7 @@ class HungryHuntington {
     public function getDealsForDow($dow) {
         $query = 'SELECT d.headline, d.url_title as deal_url, d.description, c.name,
             c.google_map, c.website, c.phone, c.address, t.type_of_deal,
-            c.url_title
+            c.directions, c.url_title
             FROM deals d
             JOIN companies c
             ON c.company_id = d.company_id
