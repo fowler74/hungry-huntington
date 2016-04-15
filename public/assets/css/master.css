@@ -75,6 +75,10 @@ span.btnSpan {display:block;}
 .pageList li a {color:#424242; display:block; padding:10px 20px;}
 .pageList li:hover {background-color:#e0e0e0;}
 
+/* Social Media Icons */
+.social {float:right;}
+.social .circle {width:40px; height:40px; background-color:rgba(256, 256, 256, .2); float:left; margin-top:5px; line-height:40px; text-align:center; font-size:25px; color:#f44336;}
+
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
 
