@@ -84,6 +84,7 @@ span.btnSpan {display:block;}
 /* Get Directions */
 .getDirections {padding:0 20px; line-height:30px; margin-bottom:10px;}
 .getDirections i.material-icons {float:left;}
+.getDirections a {display:block;}
 
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
