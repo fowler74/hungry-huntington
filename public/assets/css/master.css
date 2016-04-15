@@ -81,6 +81,10 @@ span.btnSpan {display:block;}
 .social .circle a {color:#f44336;}
 .social .circle a:hover {color:rgb(68,138,255);}
 
+/* Get Directions */
+.getDirections {padding:0 20px; line-height:30px;}
+.getDirections i.material-icons {float:left;}
+
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
 
