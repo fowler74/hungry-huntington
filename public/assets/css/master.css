@@ -82,7 +82,7 @@ span.btnSpan {display:block;}
 .social .circle a:hover {color:rgb(68,138,255);}
 
 /* Get Directions */
-.getDirections {padding:0 20px; line-height:30px;}
+.getDirections {padding:0 20px; line-height:30px; margin-bottom:10px;}
 .getDirections i.material-icons {float:left;}
 
 /* Drawer Animation */
@@ -114,8 +114,7 @@ footer .copyright span {color:#fff; font-size:10px; display:block; text-align:ce
 	.mobile {display:block;}
 	.wrap {width:100%;}
 	img {max-width:100%;}
-	section {}
-	section.page-title {}
+	.social {margin-right:5%;}
 	h1 {margin-left:5%;}
 	section.top .wrap {width:90%; margin:0 5%;}
 	.deal {height:auto; margin:10px 0; overflow:hidden;}
