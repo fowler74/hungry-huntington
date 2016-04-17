@@ -4,7 +4,7 @@
     </div>
     <div class="info">
         <h2><a href="/restaurants/{{ deal.url_title }}/{{ deal.deal_url }}/">{{ deal.name }} | {{ deal.headline }}</a></h2>
-        <p>Type: {{ deal.type_of_deal|capitalize }}</p>
+        <!--p>Type: {{ deal.type_of_deal|capitalize }}</p-->
         <p>{{ deal.description|nl2br }}</p>
     </div>
     <button class="contactButton mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
@@ -17,6 +17,7 @@
             <li>{{ deal.phone }}</li>
             <li>{{ deal.address }}</li>
             <li>Huntington, WV</li>
+            <li>Type: {{ deal.type_of_deal|capitalize }}</li>
         </ul>
         <div class="getDirections">
             <span><a href="{{ deal.directions }}" target="_BLANK"><i class="material-icons">location_on</i>Get Directions</a></span>
