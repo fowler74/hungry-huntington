@@ -68,8 +68,8 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 .contact h3 {width:260px; color:#424242;}
 .contact ul {padding:20px; width:260px;}
 .contact li {color:#424242; font-weight:500px; line-height:25px; font-size:16px;}
-.contact li i.material-icons {float:left;}
-.contact li.city {margin-left:10px;}
+.contact li i.material-icons {float:left; padding-right:10px;}
+.contact li.city {margin-left:35px;}
 span.btnSpan {display:block;}
 
 /* Restaurants */
@@ -85,7 +85,7 @@ span.btnSpan {display:block;}
 
 /* Get Directions */
 .getDirections {padding:0 20px; line-height:30px; margin-bottom:10px;}
-.getDirections i.material-icons {float:left;}
+.getDirections i.material-icons {float:left; margin-right:30px;}
 
 /* Drawer Animation */
 .open {width:300px; transition:.4s ease;}
