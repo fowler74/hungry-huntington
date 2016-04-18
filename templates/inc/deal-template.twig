@@ -17,7 +17,7 @@
             <li><i class="material-icons">phone</i>{{ deal.phone }}</li>
             <li><i class="material-icons">location_on</i>{{ deal.address }}</li>
             <li class="city">Huntington, WV</li>
-            <li>Deal Type: {{ deal.type_of_deal|capitalize }}</li>
+            <li><i class="material-icons">restaurant_menu</i>Deal Type: {{ deal.type_of_deal|capitalize }}</li>
         </ul>
         <div class="getDirections">
             <span><a href="{{ deal.directions }}" target="_BLANK"><i class="material-icons">location_searching</i>Get Directions</a></span>
