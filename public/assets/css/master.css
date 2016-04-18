@@ -68,6 +68,8 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 .contact h3 {width:260px; color:#424242;}
 .contact ul {padding:20px; width:260px;}
 .contact li {color:#424242; font-weight:500px; line-height:25px; font-size:16px;}
+.contact li i.material-icons {float:left;}
+.contact li.city {margin-left:10px;}
 span.btnSpan {display:block;}
 
 /* Restaurants */

@@ -13,14 +13,14 @@
     <div class="contact">
         <h3>Contact Info</h3>
         <ul>
-            <li><a href="{{ deal.website }}" target="_BLANK">{{ deal.name }}</a></li>
-            <li>{{ deal.phone }}</li>
-            <li>{{ deal.address }}</li>
-            <li>Huntington, WV</li>
+            <li><a href="{{ deal.website }}" target="_BLANK"><i class="material-icons">link</i>{{ deal.name }}</a></li>
+            <li><i class="material-icons">phone</i>{{ deal.phone }}</li>
+            <li><i class="material-icons">location_on</i>{{ deal.address }}</li>
+            <li class="city">Huntington, WV</li>
             <li>Deal Type: {{ deal.type_of_deal|capitalize }}</li>
         </ul>
         <div class="getDirections">
-            <span><a href="{{ deal.directions }}" target="_BLANK"><i class="material-icons">location_on</i>Get Directions</a></span>
+            <span><a href="{{ deal.directions }}" target="_BLANK"><i class="material-icons">location_searching</i>Get Directions</a></span>
         </div>
     </div>
 </div>
