@@ -19,4 +19,7 @@ $(document).ready(function(){
     $('.li-open').click(function(){
         $(this).children().slideToggle();
     });
+
+    var number = $('ul.pageList').length;
+    document.getElementById("number").innerHTML = number;
 });
