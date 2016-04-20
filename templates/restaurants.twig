@@ -6,16 +6,18 @@
 {% elseif deals.getPageData('callMethod') == 'getDeal' %}
     {% set description = "" %}
     {% set title = "" %}
+    {% set pageTitle = "" %}
     {% for deal in deals.getDeal(deals.getPageData('urlTitle')[1], deals.getPageData('urlTitle')[2]) %}
         {% set description = deal.description %}
         {% set title = deal.name ~ " " ~ deal.headline %}
+        {% set pageTitle = deal.name %}
     {% endfor %}
 {% endif %}
 {% include 'inc/head.twig' %}
 {% include 'inc/header.twig' %}
 <section class="page-title">
 	<div class="wrap">
-		<h1>{{ title }} <!--(<span id="number"></span>)--></h1>
+		<h1>{{ pageTitle }} <!--(<span id="number"></span>)--></h1>
         {% include 'inc/social.twig' %}
 	</div>
 </section>
