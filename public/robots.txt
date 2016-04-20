@@ -3,4 +3,4 @@ Disallow:
 Disallow: /admin/
 Allow: /
 
-Sitemap: https://hungryhuntington.com/sitemap.xml.gz
+Sitemap: https://hungryhuntington.com/sitemap.xml
