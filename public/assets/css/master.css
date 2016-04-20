@@ -14,7 +14,7 @@ body {height:100%; /*font-family: 'Open Sans', sans-serif;*/ font-family: 'Robot
 ::selection {background:rgba(244, 67, 54, 0.3);}
 .wrap {width:960px; margin:auto;}
 .clear {clear:both;}
-.beforeFooter {padding-bottom:160px; clear:both;}
+.beforeFooter {padding-bottom:220px; clear:both;}
 a {text-decoration:none;}
 
 /* Typography */
@@ -99,11 +99,12 @@ span.btnSpan {display:block;}
 .mobile {display:none;}
 
 /* Footer */
-footer {position:absolute; bottom:0; width:100%; min-width:960px; height:160px; background-color:#e0e0e0;}
+footer {position:absolute; bottom:0; width:100%; min-width:960px; height:220px; background-color:#e0e0e0;}
 footer .logo {width:70px; margin:auto; margin-top:20px;}
 footer span {font-size:16px; color:#424242; display:block; text-align:center;}
 footer .copyright {position:absolute; bottom:0; left:0; width:100%; min-width:960px; height:30px; background-color:#424242;}
 footer .copyright span {color:#fff; font-size:10px; display:block; text-align:center; line-height:30px;}
+footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 
 /* Min-Width 1500px */
 @media screen and (min-width:1500px){
