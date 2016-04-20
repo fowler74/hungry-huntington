@@ -126,6 +126,6 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	.info {margin-left:0; margin:0 5%; width:auto;}
 	header, footer, footer .copyright, section.page-title {min-width:100%;}
 	.beforeFooter {display:none;}
-	footer {height:auto; position:relative;}
+	footer {height:auto; position:relative; clear:both;}
 	footer span.disclaimer {width:90%; margin:10px 5%; padding-bottom:50px; margin-bottom:0;}
 }
