@@ -5,9 +5,10 @@
     {% set title = deals.getCompanyName(deals.getPageData('urlTitle')[1]) %}
 {% elseif deals.getPageData('callMethod') == 'getDeal' %}
     {% set description = "" %}
-    {% set title = deals.getDealName(deals.getPageData('urlTitle')[2]) %}
+    {% set title = "" %}
     {% for deal in deals.getDeal(deals.getPageData('urlTitle')[1], deals.getPageData('urlTitle')[2]) %}
         {% set description = deal.description %}
+        {% set title = deal.name ~ " " ~ deal.headline %}
     {% endfor %}
 {% endif %}
 {% include 'inc/head.twig' %}
