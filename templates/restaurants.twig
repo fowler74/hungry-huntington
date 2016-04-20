@@ -9,8 +9,8 @@
     {% set pageTitle = "" %}
     {% for deal in deals.getDeal(deals.getPageData('urlTitle')[1], deals.getPageData('urlTitle')[2]) %}
         {% set description = deal.description %}
-        {% set title = deal.name ~ " " ~ deal.headline %}
-        {% set pageTitle = deal.name %}
+        {% set title = deal.headline ~ " | " ~ deal.name %}
+        {% set pageTitle = deal.headline %}
     {% endfor %}
 {% endif %}
 {% include 'inc/head.twig' %}
