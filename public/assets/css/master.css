@@ -119,10 +119,12 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	.mobile {display:block;}
 	.wrap {width:100%;}
 	img {max-width:100%;}
-	.social {margin-right:5%;}
+	.social {position:absolute; top:-60px; right:5%; margin-right:0;}
 	h1 {margin-left:5%;}
 	h3 {padding-left:5%;}
 	section.top .wrap {width:90%; margin:0 5%;}
+	.social .circle {background-color:#f44336;}
+	.social .circle a {color:#fff;}
 	.deal {height:auto; margin:10px 0; overflow:hidden;}
 	.contact {position:relative; height:auto; width:100%; display:block !important; box-shadow:none;}
 	.contact ul {padding:20px 5%;}
