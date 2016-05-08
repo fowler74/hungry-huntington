@@ -9,7 +9,7 @@ table{border-collapse:collapse;border-spacing:0;}
 
 /* Default Styles */
 html {height:100%;}
-body {height:100%; /*font-family: 'Open Sans', sans-serif;*/ font-family: 'Roboto', sans-serif;}
+body {height:100%; background:rgb(247, 247, 247);; /*font-family: 'Open Sans', sans-serif;*/ font-family: 'Roboto', sans-serif;}
 .bodyWrap {min-height:100%; position:relative; }
 ::selection {background:rgba(244, 67, 54, 0.3);}
 .wrap {width:960px; margin:auto;}
