@@ -1,7 +1,7 @@
 <div class="deal {{ deal.type_of_deal }}">
-    <div class="googleMap">
+    <!--div class="googleMap">
         <img src="{{ deal.google_map }}" alt="{{ deal.name }} map">
-    </div>
+    </div-->
     <div class="info">
         <h2><a href="/restaurants/{{ deal.url_title }}/{{ deal.deal_url }}/">{{ deal.name }} | {{ deal.headline }}</a></h2>
         <!--p>Type: {{ deal.type_of_deal|capitalize }}</p-->
@@ -10,17 +10,19 @@
     <button class="contactButton mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
           <span class="btnSpan"><i class="material-icons">add</i></span>
     </button>
-    <div class="contact">
-        <h3>Contact Info</h3>
-        <ul>
-            <li><a href="{{ deal.website }}" target="_BLANK"><i class="material-icons">link</i>{{ deal.name }}</a></li>
-            <li><i class="material-icons">phone</i>{{ deal.phone }}</li>
-            <li><i class="material-icons">location_on</i>{{ deal.address }}</li>
-            <li class="city">Huntington, WV</li>
-            <li><i class="material-icons">restaurant_menu</i>Deal Type: {{ deal.type_of_deal|capitalize }}</li>
-        </ul>
-        <div class="getDirections">
-            <span><a href="{{ deal.directions }}" target="_BLANK"><i class="material-icons">location_searching</i>Get Directions</a></span>
+    <div class="infoWrap">
+        <div class="contact">
+            <h3>Contact Info</h3>
+            <ul>
+                <li><a href="{{ deal.website }}" target="_BLANK"><i class="material-icons">link</i>{{ deal.name }}</a></li>
+                <li><i class="material-icons">phone</i>{{ deal.phone }}</li>
+                <li><i class="material-icons">location_on</i>{{ deal.address }}</li>
+                <li class="city">Huntington, WV</li>
+                <li><i class="material-icons">restaurant_menu</i>Deal Type: {{ deal.type_of_deal|capitalize }}</li>
+            </ul>
+            <div class="getDirections">
+                <span><a href="{{ deal.directions }}" target="_BLANK"><i class="material-icons">location_searching</i>Get Directions</a></span>
+            </div>
         </div>
     </div>
 </div>
