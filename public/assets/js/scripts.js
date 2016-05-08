@@ -19,4 +19,12 @@ $(document).ready(function(){
     $('.li-open').click(function(){
         $(this).children().slideToggle();
     });
+	
+	$('body > div > header > nav > ul > li').click(function() {
+		ga('send', 'event', 'Navigation', 'click', 'Top');
+	});
+	
+	$('body > div > aside > nav > ul > li').click(function() {
+		ga('send', 'event', 'Navigation', 'click', 'Side');
+	});
 });
