@@ -262,6 +262,40 @@ table > tbody > tr:nth-child(even) {
   }
 }
 
+.group input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #636363;
+    opacity:  0;
+}
+.group input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #636363;
+   opacity:  0;
+}
+.group input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #636363;
+   opacity:  0;
+}
+.group input:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #636363;
+   opacity:  0;
+}
+
+.group input::-webkit-input-placeholder:focus { /* WebKit browsers */
+    color:    #636363;
+    opacity:  1;
+}
+.group input:-moz-placeholder:focus { /* Mozilla Firefox 4 to 18 */
+   color:    #636363;
+   opacity:  1;
+}
+.group input::-moz-placeholder:focus { /* Mozilla Firefox 19+ */
+   color:    #636363;
+   opacity:  1;
+}
+.group input:-ms-input-placeholder:focus { /* Internet Explorer 10+ */
+   color:    #636363;
+   opacity:  1;
+}
+
 @media screen and (max-width:960px) {
     form { width:100%; }
 }
