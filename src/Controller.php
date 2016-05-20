@@ -71,7 +71,7 @@ class Controller extends HungryHuntington {
     protected function logout() {
         if($this->loggedIn) {
             session_destroy();
-            header("Location: https://hungryhuntington.com/admin/");
+            header("Location: https://hungryhuntington.com/");
         }
     }
 
