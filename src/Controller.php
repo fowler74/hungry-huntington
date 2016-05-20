@@ -6,6 +6,8 @@ class Controller extends HungryHuntington {
     public $loggedIn;
     public $username;
     public $userId;
+    public $userType;
+    public $companyId;
 
     protected $db;
     protected $d;
@@ -41,7 +43,7 @@ class Controller extends HungryHuntington {
     *
     */
     protected function login() {
-        $query = 'SELECT user_id, username, password
+        $query = 'SELECT user_id, username, password, user_type, company_id
         FROM users
         WHERE username = :username
         LIMIT 1';
@@ -53,9 +55,13 @@ class Controller extends HungryHuntington {
             $_SESSION['loggedIn'] = true;
             $_SESSION['username'] = $data['username'];
             $_SESSION['userId'] = $data['user_id'];
+            $_SESSION['user_type'] = $data['user_type'];
+            $_SESSION['company_id'] = $data['company_id'];
             $this->loggedIn = true;
             $this->username = $data['username'];
             $this->userId   = $data['user_id'];
+            $this->userType = $data['user_type'];
+            $this->companyId = $data['company_id'];
             return true;
         } else {
             return false;
