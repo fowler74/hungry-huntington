@@ -13,6 +13,8 @@ class Controller extends HungryHuntington {
     protected $d;
     protected $actions;
     protected $post;
+    protected $admin;
+    protected $manager;
 
     public function __construct(Array $post) {
         $this->post = $post;
@@ -20,6 +22,8 @@ class Controller extends HungryHuntington {
         parent::__construct();
         $this->db = parent::getDb();
         $this->d  = parent::getD();
+        $this->admin = new \Wappr\Admin;
+        $this->manager = new \Wappr\Manager;
     }
 
     public function run() {
@@ -31,7 +35,13 @@ class Controller extends HungryHuntington {
         }
         // if posted action is in the actions property call the action
         if(in_array($this->post['action'], $this->actions)) {
-            $this->{$this->post['action']}();
+            if($this->post['action'] == 0) {
+                $this->admin->{$this->post['action']}();
+            } elseif($this->post['action'] == 1) {
+                $this->manager->{$this->post['action']}();
+            } else {
+                $this->{$this->post['action']}();
+            }
         }
     }
 
@@ -232,6 +242,8 @@ class Controller extends HungryHuntington {
             $this->loggedIn = true;
             $this->username = $_SESSION['username'];
             $this->userId   = $_SESSION['userId'];
+            $this->userType = $_SESSION['user_type'];
+            $this->companyId = $_SESSION['company_id'];
             $_SESSION['loggedIn'] = true;
         }
     }
@@ -250,7 +262,7 @@ class Controller extends HungryHuntington {
     }
 
     // Using this function I found on stackoverflow: http://stackoverflow.com/a/9535967
-    function sluggit($string, $separator = '-')
+    public function sluggit($string, $separator = '-')
     {
         $accents_regex = '~&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i';
         $special_cases = array('&' => 'and', "'" => '');
@@ -260,6 +272,30 @@ class Controller extends HungryHuntington {
         $string = preg_replace("/[^a-z0-9]/u", "$separator", $string);
         $string = preg_replace("/[$separator]+/u", "$separator", $string);
         return $string;
+    }
+
+    /**
+    *
+    *
+    */
+    protected function checkAdmin() {
+        if(($this->loggedIn == true) AND ($this->userType == 0)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+    *
+    *
+    */
+    protected function checkManager() {
+        if(($this->loggedIn == true) AND ($this->userType == 1)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     protected function loadActions() {
