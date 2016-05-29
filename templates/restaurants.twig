@@ -32,8 +32,8 @@
             {% endfor %}
             </ul>
         {% elseif deals.getPageData('callMethod') == 'getCompany' %}
-            {% for deal in deals.getCompanyDeals(deals.getPageData('urlTitle')[1]) %}
-            {% include 'inc/deal-template.twig' %}
+            {% for deal in deals.getCompanyDealsGrouped(deals.getPageData('urlTitle')[1]) %}
+            {% include 'inc/restaurant-deal.twig' %}
             {% endfor %}
         {% elseif deals.getPageData('callMethod') == 'getDeal' %}
             {% for deal in deals.getDeal(deals.getPageData('urlTitle')[1], deals.getPageData('urlTitle')[2]) %}
