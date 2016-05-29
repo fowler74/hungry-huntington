@@ -8,8 +8,8 @@
 </section>
 <section class="top">
     <div class="wrap">
-        {% for deal in deals.getTodaysDeals() %}
-        {% include 'inc/deal-template.twig' %}
+        {% for deal in deals.getTodaysDealsGrouped() %}
+        {% include 'inc/group-deal-template.twig' %}
         {% endfor %}
     </div>
 </section>
