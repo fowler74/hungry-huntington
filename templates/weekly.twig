@@ -24,8 +24,8 @@
                 <li><a href="/weekly/sunday/">Sunday</a></li>
             </ul>
         {% elseif deals.getPageData('callMethod') == 'getDay' %}
-            {% for deal in deals.getDealsForDow(deals.getPageData('urlTitle')[1]) %}
-            {% include 'inc/deal-template.twig' %}
+            {% for  key,deal in deals.getDealsForDowGrouped(deals.getPageData('urlTitle')[1]) %}
+            {% include 'inc/group-deal-template.twig' %}
             {% endfor %}
         {% endif %}
     </div>

@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('.contactButton').click(function(){
         $(this).children().toggleClass('rotate');
+        $(this).prev().toggleClass('grow');
         $(this).next().toggleClass('open');
     });
 

@@ -1,8 +1,10 @@
 {% if deals.getPageData('callMethod') == 'getCompanies' %}
     {% set pageTitle = "Restaurants" %}
+    {% set title = "Restaurants" %}
     {% set description = "Restaurants / Bars in Huntington, WV that currently have at least one deal." %}
 {% elseif deals.getPageData('callMethod') == 'getCompany' %}
     {% set pageTitle = deals.getCompanyName(deals.getPageData('urlTitle')[1]) %}
+    {% set title = deals.getCompanyName(deals.getPageData('urlTitle')[1]) %}
 {% elseif deals.getPageData('callMethod') == 'getDeal' %}
     {% set description = "" %}
     {% set title = "" %}
@@ -21,7 +23,7 @@
         {% include 'inc/social.twig' %}
 	</div>
 </section>
-<section class="top">
+<section class="top" id="restaurants">
     <div class="wrap">
         {% if deals.getPageData('callMethod') == 'getCompanies' %}
             <ul class="pageList">
@@ -30,8 +32,8 @@
             {% endfor %}
             </ul>
         {% elseif deals.getPageData('callMethod') == 'getCompany' %}
-            {% for deal in deals.getCompanyDeals(deals.getPageData('urlTitle')[1]) %}
-            {% include 'inc/deal-template.twig' %}
+            {% for deal in deals.getCompanyDealsGrouped(deals.getPageData('urlTitle')[1]) %}
+            {% include 'inc/restaurant-deal.twig' %}
             {% endfor %}
         {% elseif deals.getPageData('callMethod') == 'getDeal' %}
             {% for deal in deals.getDeal(deals.getPageData('urlTitle')[1], deals.getPageData('urlTitle')[2]) %}

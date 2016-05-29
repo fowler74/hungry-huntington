@@ -9,8 +9,8 @@
 </section>
 <section class="top">
     <div class="wrap">
-        {% for deal in deals.getBarDeals() %}
-        {% include 'inc/deal-template.twig' %}
+        {% for key,deal in deals.getBarDealsGrouped() %}
+        {% include 'inc/group-deal-template.twig' %}
         {% endfor %}
     </div>
 </section>
