@@ -71,7 +71,7 @@ class HungryHuntington {
 
     public function getBarDealsGrouped() {
         $grouped = array();
-        $deals = ();
+        $deals = array();
         $query = 'SELECT id, c.name, headline, description,
         c.google_map, c.website, c.phone, c.address, t.type_of_deal,
         c.url_title, c.directions, d.url_title as deal_url
