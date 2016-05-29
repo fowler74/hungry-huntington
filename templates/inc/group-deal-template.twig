@@ -4,8 +4,11 @@
     </div-->
     <div class="info">
         <h2><a href="/restaurants/{{ deal.0.url_title }}/{{ deal.0.deal_url }}/">{{ key }}</a></h2>
-        <h3>{{ deal.0.headline }}</h3>
-        <p>{{ deal.0.description|nl2br }}</p>
+        {% for grouped in deal %}
+        <h3>{{ grouped.headline }}</h3>
+        <p>{{ grouped.description|nl2br }}</p>
+        <hr>
+        {% endfor %}
     </div>
     <button class="contactButton mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
           <span class="btnSpan"><i class="material-icons">add</i></span>
