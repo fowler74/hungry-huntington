@@ -1,8 +1,10 @@
 {% if deals.getPageData('callMethod') == 'getCompanies' %}
     {% set pageTitle = "Restaurants" %}
+    {% set title = "Restaurants" %}
     {% set description = "Restaurants / Bars in Huntington, WV that currently have at least one deal." %}
 {% elseif deals.getPageData('callMethod') == 'getCompany' %}
     {% set pageTitle = deals.getCompanyName(deals.getPageData('urlTitle')[1]) %}
+    {% set title = deals.getCompanyName(deals.getPageData('urlTitle')[1]) %}
 {% elseif deals.getPageData('callMethod') == 'getDeal' %}
     {% set description = "" %}
     {% set title = "" %}
