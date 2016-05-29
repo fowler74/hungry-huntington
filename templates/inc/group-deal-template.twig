@@ -7,7 +7,9 @@
         {% for grouped in deal %}
         <h3>{{ grouped.headline }}</h3>
         <p>{{ grouped.description|nl2br }}</p>
+        {% if not loop.last %}
         <hr>
+        {% endif %}
         {% endfor %}
     </div>
     <button class="contactButton mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
