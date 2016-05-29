@@ -139,7 +139,7 @@ class HungryHuntington {
         $deals = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         // make the restaurant name the key of the array
         for($i=0;$i<count($deals);$i++) {
-            $grouped[$deals['restaurant_name']][] = $deals[$i];
+            $grouped[$deals['name']][] = $deals[$i];
         }
         return $grouped;
     }
