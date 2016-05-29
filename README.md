@@ -18,3 +18,4 @@ will have deals for local places to eat and drink.
 [Wappr]: https://wappr.co/
 [v1.0.0]: https://github.com/wappr/hungry-huntington/milestones/v1.0.0
 [v1.1.0]: https://github.com/wappr/hungry-huntington/milestones/v1.1.0
+[v1.1.0]: https://github.com/wappr/hungry-huntington/milestones/v1.2.0
