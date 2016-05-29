@@ -1,9 +1,9 @@
 <div class="rDeal">
     {% for grouped in deal %}
-    <div class="deal {{ deal.type_of_deal }}">
+    <div class="deal {{ grouped.type_of_deal }}">
         <div class="info">
-            <h2><a href="/restaurants/{{ deal.url_title }}/{{ deal.deal_url }}/">{{ deal.headline }}</a></h2>
-            <p>{{ deal.description|nl2br }}</p>
+            <h2><a href="/restaurants/{{ grouped.url_title }}/{{ grouped.deal_url }}/">{{ grouped.headline }}</a></h2>
+            <p>{{ grouped.description|nl2br }}</p>
         </div>
     </div>
     {% endfor %}
