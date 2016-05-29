@@ -78,6 +78,10 @@ span.btnSpan {display:block;}
 .pageList li {width:100%; height:auto; margin-bottom:20px; background-color:#fff; box-sizing:border-box; font-size:20px; line-height:30px; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
 .pageList li a {color:#424242; display:block; padding:10px 20px;}
 .pageList li:hover {background-color:#e0e0e0;}
+#restaurants .rDeal {width:630px; float:left;}
+#restaurants .rDeal .deal {margin-bottom:20px; margin-top:0;}
+#restaurants .rDeal .deal:first-child {margin-top:20px;}
+#restaurants .contact {float:right; background:#e0e0e0; margin-top:20px;}
 
 /* Social Media Icons */
 .social {float:right;}
