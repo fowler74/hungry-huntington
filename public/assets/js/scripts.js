@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('.contactButton').click(function(){
         $(this).children().toggleClass('rotate');
+        $(this).parent().children().first().toggleClass('grow1');
         $(this).prev().toggleClass('grow');
         $(this).next().toggleClass('open');
     });
@@ -21,11 +22,11 @@ $(document).ready(function(){
         $(this).children().slideToggle();
     });
 
-	$('header nav ul li a').click(function() {
-		ga('send', 'event', 'Navigation', 'click', 'Top');
-	});
+    $('header nav ul li a').click(function() {
+        ga('send', 'event', 'Navigation', 'click', 'Top');
+    });
 
-	$('aside nav ul li a').click(function() {
-		ga('send', 'event', 'Navigation', 'click', 'Side');
-	});
+    $('aside nav ul li a').click(function() {
+        ga('send', 'event', 'Navigation', 'click', 'Side');
+    });
 });
