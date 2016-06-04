@@ -107,7 +107,7 @@ span.btnSpan i.material-icons {position:absolute; top:0; left:0; -webkit-transfo
 .open {transition:.4s ease; width:300px;}
 .growit {height:0px; width:0px; float:right; transition:.4s ease;}
 .grow {height:300px; width:300px; transition:.4s ease;}
-.grow1 {width:600px; transition:.4s ease;}
+.grow1 {width:660px; transition:.4s ease;}
 
 /* Display */
 .none {display:none;}
