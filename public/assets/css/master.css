@@ -29,7 +29,7 @@ p  {font-size:16px; margin-bottom:20px; line-height:23px;}
 header{width:100%; min-width:960px; position:fixed; top:0; z-index:999999; height:70px; background:#fff;}
 header .logo {float:left; width:70px; margin-left:13px;}
 header nav {float:right;}
-header nav ul {margin-top:25px; margin-right:12px;}
+header nav ul {margin-top:25px;}
 header nav ul li {font-size:18px; float:left; line-height:40px; box-sizing:border-box; text-transform:uppercase;}
 header nav ul li:hover {border-bottom:5px solid #F44336;}
 header nav ul li.here {}
