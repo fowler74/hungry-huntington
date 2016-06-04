@@ -138,6 +138,7 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	img {max-width:100%;}
 	.social {position:absolute; top:-60px; right:5%; margin-right:0;}
 	h1 {margin-left:5%;}
+	h2 {padding-top:0;}
 	h3 {padding-left:5%;}
 	section.top .wrap {width:90%; margin:0 5%;}
 	.social .circle {background-color:#f44336;}
@@ -147,7 +148,7 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	.contact ul {padding:20px 5%;}
 	.getDirections {padding:0 5%;}
 	.googleMap, .mdl-button--fab.mdl-button--colored, header nav {display:none;}
-	.info {margin-left:0; margin:0 5%; width:auto;}
+	.info {margin:0; padding:5%; width:100%;}
 	.infoWrap {width:100%; height:auto; display:block; position:relative; float:left; overflow:hidden;}
 	header, footer, footer .copyright, section.page-title {min-width:100%;}
 	.beforeFooter {display:none;}
