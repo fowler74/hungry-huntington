@@ -61,7 +61,7 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 /* Deal */
 .deal {width:100%; height:auto; background:#fff; float:left; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); margin:20px 0; position:relative;}
 .googleMap {width:300px; height:300px; float:left;}
-.info {margin-left:25px; float:left; width:600px;}
+.info {margin-left:25px; float:left; width:900px; transition:.4s ease;}
 .contactButton { z-index:999; cursor:pointer; text-align:center; position:absolute !important; right:-15px; top:-15px;}
 .contactButton span.btnSpan {transition:.4s ease;}
 .contact {width:300px; transition:.4s ease; overflow:hidden; height:270px; position:relative; right:0; top:0; }
@@ -71,7 +71,8 @@ section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 .contact li {color:#424242; font-weight:500px; line-height:25px; font-size:16px;}
 .contact li i.material-icons {float:left; padding-right:10px;}
 .contact li.city {margin-left:35px;}
-span.btnSpan {display:block;}
+span.btnSpan {display:block; width:56px; height:56px; position:relative;}
+span.btnSpan i.material-icons {position:absolute; top:0; left:0; -webkit-transform:translate(0); transform:translate(0); line-height:56px; width:56px;}
 .infoWrap {overflow:hidden; height:100%; background:#e0e0e0; transition:.4s ease; float:right; width:0px; display:block; position:absolute; right:0;}
 
 /* Restaurants */
@@ -82,6 +83,15 @@ span.btnSpan {display:block;}
 #restaurants .rDeal .deal {margin-bottom:20px; margin-top:0;}
 #restaurants .rDeal .deal:first-child {margin-top:20px;}
 #restaurants .contact {float:right; background:#e0e0e0; margin-top:20px;}
+.info {margin:0; padding:0 25px 25px 25px; box-sizing:border-box; width:100%;}
+#restaurants .rDeal .deal span {line-height:20px; display:block; margin-top:5px; font-size:12px;}
+.contact .logo {width:100px; padding-left:20px;}
+.contact .logo img {width:100%;}
+
+/* Food Truck */
+.embed-wrap {position:relative; padding-bottom:56.25%; padding-top:30px; height:0; overflow:hidden;}
+.embed-wrap::after {content:''; position:absolute; width:100%; height:100%; z-index:9; top:0; left:0;}
+.embed-wrap iframe, .embed-wrap object, .embed-wrap embed {position:absolute; top:0; left:0; width:100%; height:100%;}
 
 /* Social Media Icons */
 .social {float:right;}
@@ -95,8 +105,9 @@ span.btnSpan {display:block;}
 
 /* Drawer Animation */
 .open {transition:.4s ease; width:300px;}
-.growit {height:0px; width:300px; float:right; transition:.4s ease;}
-.grow {height:300px; transition:.4s ease;}
+.growit {height:0px; width:0px; float:right; transition:.4s ease;}
+.grow {height:300px; width:300px; transition:.4s ease;}
+.grow1 {width:600px; transition:.4s ease;}
 
 /* Display */
 .none {display:none;}
