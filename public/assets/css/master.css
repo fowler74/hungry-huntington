@@ -145,10 +145,11 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	.social .circle a {color:#fff;}
 	.deal {height:auto; margin:10px 0; overflow:hidden;}
 	.contact {position:relative; height:auto; width:100%; display:block !important; box-shadow:none;}
-	.contact ul {padding:20px 5%;}
-	.getDirections {padding:0 5%;}
+	.contact ul {padding:20px;}
+	.contact h3 {padding-left:20px; padding-top:20px;}
+	.getDirections {padding:0 20px;}
 	.googleMap, .mdl-button--fab.mdl-button--colored, header nav {display:none;}
-	.info {margin:0; padding:5%; width:100%;}
+	.info {margin:0; padding:20px; width:100%; box-sizing:border-box;}
 	.infoWrap {width:100%; height:auto; display:block; position:relative; float:left; overflow:hidden;}
 	header, footer, footer .copyright, section.page-title {min-width:100%;}
 	.beforeFooter {display:none;}
