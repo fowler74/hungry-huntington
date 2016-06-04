@@ -155,4 +155,5 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	footer {height:auto; position:relative; clear:both;}
 	footer span.disclaimer {width:90%; margin:10px 5%; padding-bottom:50px; margin-bottom:0;}
 	#restaurants .rDeal {width:100%;}
+	#restaurants .contact {margin-top:0;}
 }
