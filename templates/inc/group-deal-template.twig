@@ -1,8 +1,8 @@
 <div class="deal {{ deal.0.type_of_deal }}">
     <div class="info">
-        <h2><a href="/restaurants/{{ deal.0.url_title }}/{{ deal.0.deal_url }}/">{{ key }}</a></h2>
+        <h2><a href="/restaurants/{{ deal.0.url_title }}/">{{ key }}</a></h2>
         {% for grouped in deal %}
-        <h3>{{ grouped.headline }}</h3>
+        <h3><a href="/restaurants/{{grouped.url_title}}/{{grouped.deal_url}}/">{{ grouped.headline }}</a></h3>
         <p>{{ grouped.description|nl2br }}</p>
         {% if not loop.last %}
         <hr>
