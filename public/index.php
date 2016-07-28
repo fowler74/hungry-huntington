@@ -22,13 +22,15 @@ $page = $router->dispatch();
 $hungry->page = $page;
 $controller->run();
 if(isset($_GET['json'])) {
-
+    $j = 'json' . DS;
+} else {
+    $j = '';
 }
 
 $loader = new Twig_Loader_Filesystem(ROOT . DS . 'templates');
 $twig = new Twig_Environment($loader, array('debug' => true));
 $twig->addExtension(new Twig_Extension_Debug());
-if(file_exists(ROOT . DS . 'templates' . DS . $page['action'] . '.twig')) {
+if(file_exists(ROOT . DS . 'templates' . DS . $j . $page['action'] . '.twig')) {
     $template = $twig->loadTemplate($page['action'] . '.twig');
 } else {
     header("HTTP/1.0 404 Not Found");

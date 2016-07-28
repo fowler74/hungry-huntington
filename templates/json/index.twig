@@ -1,0 +1,3 @@
+{% for key,deal in deals.getTodaysDealsGrouped() %}
+{{ deal|json_encode() }}
+{% endfor %}
