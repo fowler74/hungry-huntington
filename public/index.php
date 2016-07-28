@@ -21,6 +21,9 @@ $page = $router->dispatch();
 // Pass the page info to the HungryHuntington class
 $hungry->page = $page;
 $controller->run();
+if(isset($_GET['json'])) {
+
+}
 
 $loader = new Twig_Loader_Filesystem(ROOT . DS . 'templates');
 $twig = new Twig_Environment($loader, array('debug' => true));
