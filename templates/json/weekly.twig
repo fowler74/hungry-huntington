@@ -10,5 +10,5 @@
     </ul>
 {% elseif deals.getPageData('callMethod') == 'getDay' %}
     {% set data = api.getDealsForDowGrouped(deals.getPageData('urlTitle')[1]) %}
-    {{ data|json_encode() }}
+    {{ data|json_encode()|raw }}
 {% endif %}
