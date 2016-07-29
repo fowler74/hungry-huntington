@@ -9,6 +9,6 @@
         <li><a href="/weekly/sunday/">Sunday</a></li>
     </ul>
 {% elseif deals.getPageData('callMethod') == 'getDay' %}
-    {% set data api.getDealsForDowGrouped(deals.getPageData('urlTitle')[1]) %}
+    {% set data = api.getDealsForDowGrouped(deals.getPageData('urlTitle')[1]) %}
     {{ data|json_encode() }}
 {% endif %}
