@@ -9,6 +9,8 @@ class Router {
 	public function __construct() {
 		// trim beginning and end /'s
 		$this->request_uri = trim($_SERVER['REQUEST_URI'], '/');
+		// get rid of ?json=true so the segments match up
+		$this->request_uri = str_replace("?json=true", "", $this->request_uri);
 		// Get how many segments there are
 		$this->numSegments = count(explode('/', $this->request_uri)) - 1;
 		// Explode the segments into an array
