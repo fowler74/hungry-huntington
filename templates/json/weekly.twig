@@ -1,0 +1,14 @@
+{% if deals.getPageData('callMethod') == 'getWeek'%}
+    <ul class="pageList">
+        <li><a href="/weekly/monday/">Monday</a></li>
+        <li><a href="/weekly/tuesday/">Tuesday</a></li>
+        <li><a href="/weekly/wednesday/">Wednesday</a></li>
+        <li><a href="/weekly/thursday/">Thursday</a></li>
+        <li><a href="/weekly/friday/">Friday</a></li>
+        <li><a href="/weekly/saturday/">Saturday</a></li>
+        <li><a href="/weekly/sunday/">Sunday</a></li>
+    </ul>
+{% elseif deals.getPageData('callMethod') == 'getDay' %}
+    {% set data api.getDealsForDowGrouped(deals.getPageData('urlTitle')[1]) %}
+    {{ data|json_encode() }}
+{% endif %}
