@@ -11,11 +11,13 @@ session_start();
 require_once(ROOT . DS . 'src' . DS . 'HungryHuntington.php');
 require_once(ROOT . DS . 'src' . DS . 'Router.php');
 require_once(ROOT . DS . 'src' . DS . 'Controller.php');
+require_once(ROOT . DS . 'src' . DS . 'Api.php');
 require_once(ROOT . DS . 'vendor' . DS . 'autoload.php');
 
 $hungry     = new Wappr\HungryHuntington;
 $router     = new Wappr\Router;
 $controller = new Wappr\Controller($_POST);
+$api        = new Wappr\Api;
 require_once(ROOT . DS . 'routes.php');
 $page = $router->dispatch();
 // Pass the page info to the HungryHuntington class
@@ -37,4 +39,4 @@ if(file_exists(ROOT . DS . 'templates' . DS . $j . $page['action'] . '.twig')) {
     echo 'Page not found';
     die();
 }
-echo $template->render(array('deals' => $hungry, 'controller' => $controller));
+echo $template->render(array('deals' => $hungry, 'api' => $api, 'controller' => $controller));
