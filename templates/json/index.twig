@@ -1,2 +1,2 @@
-{% data = api.getTodaysDeals() %}
+{% set data = api.getTodaysDeals() %}
 {{ data|json_encode() }}
