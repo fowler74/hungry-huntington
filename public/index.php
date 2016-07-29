@@ -25,7 +25,7 @@ $hungry->page = $page;
 $controller->run();
 if(isset($_GET['json'])) {
     $j = 'json' . DS;
-    header('Content-Type: application/json; charset=utf-8');
+    #header('Content-Type: application/json; charset=utf-8');
     header("Access-Control-Allow-Origin: *");
 } else {
     $j = '';
