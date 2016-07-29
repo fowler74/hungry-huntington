@@ -23,6 +23,7 @@ class Router {
 	}
 
 	public function dispatch() {
+		$_SERVER['REQUEST_URI'] = str_replace("?json=true", "", $_SERVER['REQUEST_URI']);
 		foreach($this->routes as $route) {
 			if(strpos($_SERVER['REQUEST_URI'], $route['url']) !== false) {
 				if($route['hasChildren']) {
