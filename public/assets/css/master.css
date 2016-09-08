@@ -19,10 +19,10 @@ a {text-decoration:none;}
 
 /* Typography */
 h1 {font-size:30px; margin:0; line-height:50px; color:#fff; font-weight:500; float:left;}
-h2 {color:#04954a; font-weight:700; font-size:30px; padding:25px 0 15px 0;}
-h2 a {color:#04954a;}
+h2 {color:#F44336; font-weight:700; font-size:30px; padding:25px 0 15px 0;}
+h2 a {color:#F44336;}
 h3 {font-size:20px; line-height:40px; color:#fff; font-weight:500;}
-.deal h3, .deal h3 a {font-size:20px; line-height:40px; color:#04954a; font-weight:500; margin:0; padding:0;}
+.deal h3, .deal h3 a {font-size:20px; line-height:40px; color:#F44336; font-weight:500; margin:0; padding:0;}
 p  {font-size:16px; margin-bottom:20px; line-height:23px;}
 
 /* Header */
@@ -31,13 +31,13 @@ header .logo {float:left; width:70px; margin-left:13px;}
 header nav {float:right;}
 header nav ul {margin-top:25px;}
 header nav ul li {font-size:18px; float:left; line-height:40px; box-sizing:border-box; text-transform:uppercase;}
-header nav ul li:hover {border-bottom:5px solid #04954a;}
+header nav ul li:hover {border-bottom:5px solid #F44336;}
 header nav ul li.here {}
-header nav ul li a {color:#04954a; padding:0 13px; display:block;}
+header nav ul li a {color:#F44336; padding:0 13px; display:block;}
 
 /* Side Navigation */
 .sideNav {width:60px; height:60px; cursor:pointer; float:left; text-align:center; margin-top:5px; margin-left:12px;}
-.sideNav .material-icons {font-size:24px; color:#04954a; line-height:60px;}
+.sideNav .material-icons {font-size:24px; color:#F44336; line-height:60px;}
 aside {position:fixed; overflow:scroll; width:240px; height:100%; z-index:99999999; background-color:#fff; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); left:-270px; transition:.3s ease;}
 aside::-webkit-scrollbar {width:0 !important}
 aside {-ms-overflow-style:none;}
@@ -55,7 +55,7 @@ aside .logo img {width:70px;}
 .overflow {overflow:hidden;}
 
 /* Body */
-section.page-title {width:100%; min-width:960px; height:50px; background-color:#04954a; position:fixed; top:70px; left:0; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); z-index:999999;}
+section.page-title {width:100%; min-width:960px; height:50px; background-color:#F44336; position:fixed; top:70px; left:0; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); z-index:999999;}
 section.top {margin-top:140px; margin-bottom:20px; float:left; width:100%;}
 
 /* Deal */
@@ -97,8 +97,8 @@ span.btnSpan i.material-icons {position:absolute; top:0; left:0; -webkit-transfo
 /* Social Media Icons */
 .social {float:right;}
 .social .circle {width:40px; height:40px; background-color:rgba(256, 256, 256, 1); border-radius:40px; float:left; margin-top:5px; line-height:43px; text-align:center; font-size:25px; margin-left:5px;}
-.social .circle a {color:#04954a; display:block;}
-.social .circle a:hover {color:rgb(54, 56, 59);}
+.social .circle a {color:#f44336; display:block;}
+.social .circle a:hover {color:rgb(68,138,255);}
 
 /* Get Directions */
 .getDirections {padding:0 20px; line-height:30px; margin-bottom:10px;}
@@ -142,7 +142,7 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	h2 {padding-top:0;}
 	h3 {padding-left:5%;}
 	section.top .wrap {width:90%; margin:0 5%;}
-	.social .circle {background-color:#04954a;}
+	.social .circle {background-color:#f44336;}
 	.social .circle a {color:#fff;}
 	.deal {height:auto; margin:10px 0; overflow:hidden;}
 	.contact {position:relative; height:auto; width:100%; display:block !important; box-shadow:none;}
@@ -159,6 +159,3 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 	#restaurants .rDeal {width:100%;}
 	#restaurants .contact {margin-top:0;}
 }
-
-/* Colors to change back to after football game */
-
