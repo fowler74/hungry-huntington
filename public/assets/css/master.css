@@ -163,4 +163,5 @@ footer span.disclaimer {font-size:12px; margin-top:10px; line-height:14px;}
 /* For Green logo */
 header .logo, aside .logo img {width:60px; margin-top:5px;}
 header .logo img {width:100%;}
+.mdl-button--fab.mdl-button--colored {background:rgb(54, 56, 59) !important;}
 
