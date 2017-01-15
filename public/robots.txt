@@ -1,6 +1,0 @@
-User-Agent: *
-Disallow:
-Disallow: /admin/
-Allow: /
-
-Sitemap: https://hungryhuntington.com/sitemap.xml
